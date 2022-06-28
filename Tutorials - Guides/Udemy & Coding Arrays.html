@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+
+        let arr = ['a', 'b', 'c', 'd', 'e',];
+        console.log(arr);
+        // -- slice -- extracting a part of the array !-- Leaving original Array intact!!.
+        // NOTE!! - Original array is left intact with no changes, its just extracting data.
+        console.log(arr.slice(2)); // - (3) ['c', 'd', 'e'] -- Extacting from position 2.
+
+        //-- slice with start and end,: parameter 2 is not included.
+        // below: slice from position 2 -> 4, but position 4 is not included.
+        console.log(arr.slice(2, 4)); // (2) ['c', 'd']
+
+        console.log(arr); // Original Array is intact: (5) ['a', 'b', 'c', 'd', 'e']
+        // start from end with negative Number.
+        console.log(arr.slice(-2)); // from end extract 2 positions = (2) ['d', 'e']
+        console.log(arr.slice(-1)); // secount time run,from the end,original array is still intact = ['e']
+
+        // -- Extracting from array (from beginning, from the end.)
+        console.log(arr.slice(1, -2));// extract from position 2, count backwords -2 =(2) ['b', 'c']
+
+        //REMINDER ! - 2nd parameter expression in slice(x,b) is NOT!! included.
+
+        // Not defining what to extract, 
+        console.log(arr.slice()); // gives the full array = (5) ['a', 'b', 'c', 'd', 'e']
+
+
+        // --SPLICE -- CUTTING DATA FROM ARRAY!!! - MODYFIING ORIGINAL ARRAY!! --ALSO CALLED MUTATING (egen info på dette)----------------------
+        // -------------------------------------------------------------------------------------------------------------------------------------
+        console.log(arr); // for reference = (5) ['a', 'b', 'c', 'd', 'e']
+        console.log(arr.splice(2));  // cutted data from array. = (3)['c', 'd', 'e']
+        console.log(arr); //  Original array after cut =  (2) ['a', 'b']
+
+        //Cut items from array.
+        console.log(arr); // for reference
+        console.log(arr.splice(-1)); // cut last value = ['b']
+
+        // Cut and define how many items to be deleted from count.
+        let arr2 = ['f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',];
+        console.log(arr2);
+
+        console.log(arr2.splice(2, 3));// cut from position 2, and cut 3 items. = ['h', 'i', 'j'
+        console.log(arr2); // whats left from original array (arr2) = (8) ['f', 'g', 'k', 'l', 'm', 'n', 'o', 'p']
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        // REVERSE ---Reversing Array!!-- Permanent!! ----------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------
+        let arr3 = ['q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',]
+        console.log(arr3.reverse()); // just reversing the array.
+        console.log(arr3);
+        //------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // CONCAT -- Combining Arrays! -- DOES NOT MUTATE ARRAYS!-------------------------------------------------
+
+        const letters = ['a', 'b', 'c', 'd', 'e',];
+        const letters2 = ['fg', 'hi', 'jk', 'lm', 'no',];
+
+        const lettersCombined = letters.concat(letters2); // variable -> letters += letters2 / Concatinate!.
+        console.log(lettersCombined); // (10) ['a', 'b', 'c', 'd', 'e', 'fg', 'hi', 'jk', 'lm', 'no']
+
+        // JOIN -- JOINING ARRAY VALUES (comma separated) -----------------------------------------------------------
+        const alphabetAToK = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',];
+        const alphabetLToR = ['l', 'm', 'n', 'o', 'p', 'q', 'r'];
+        const alphabetSToÅ = ['s', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'æ', 'ø', 'å'];
+
+        console.log(alphabetAToK.join());
+        console.log(alphabetAToK.join(' - ')); // a - b - c - d - e - f - g - h - i - j - k
+
+
+        //--------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------
+        // Lets create the alphabet.
+        const alphabetAlmostFull = alphabetAToK.concat(alphabetLToR);
+        console.log(alphabetAlmostFull);
+        // have to concatinate in two operations with two variables. Tested.. -- For now!
+        let alphabetFull = alphabetAlmostFull.concat(alphabetSToÅ);
+        console.log(alphabetFull);
+
+        //--------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------
+
+        // create Array - Index always start with [0]
+        const friends = ['John', 'Peter', 'Bob', 'Susy', 45, undefined, null, 'Liam', 'Andrea'];
+
+        // log the full array
+        console.log(friends); // (7) ['John', 'Peter', 'Bob', 'Susy', 45, undefined, null]
+
+        // log the length of the Array
+        console.log(friends.length); // 7
+
+        // log index[1] inside of an array
+        console.log(friends[1]); // 'Peter'
+
+        // create a variable pointing to a index inside the Array
+        let mySister = friends[3]; // pointing to Susy
+
+        // log mySister
+        console.log(mySister); // 'Susy'
+
+        //Change an indexed Array value 
+        friends[4] = 'Thomas' // 45 is replaced with Thomas
+
+        // return last value in the Array
+        console.log(friends[friends.length - 1]) // Last value is Andrea
+
+        // concat - Combining
+        const lastNames = ['Bålsrød', 'Isaksen', 'Myrholt', 'Røsjordet'];
+        const firstNames = ['Thomas', 'Andreas', 'Kurt', 'Marian',]
+        const fullNames = firstNames.concat(lastNames); // Adding Array 'lastNames to the Array 'firstNames
+        console.log(fullNames);
+        // 8) ['Thomas', 'Andreas', 'Kurt', 'Marian', 'Bålsrød', 'Isaksen', 'Myrholt', 'Røsjordet']
+
+        // reverse Array order
+        console.log(fullNames.reverse()); // Values comes out backwords
+        // 8) ['Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas']
+
+        // add values to the start of the Array
+        // fullNames.unshift('Susanne');
+        console.log(fullNames); // 'Susanne' added to the start of the Array.
+        // (9) ['Susanne', 'Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas'
+
+        // add several values at once.
+        // fullNames.unshift('Kenneth', 'Cindy', 'Zelda'); // adding 3 more values
+        console.log(fullNames);
+        // (12) ['Kenneth', 'Cindy', 'Zelda', 'Susanne', 'Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas']
+
+        // Removing values from Array.
+        fullNames.shift('Marian', 'Røsjordet', 'Isaksen'); // Removed specific value
+        fullNames.shift([5]); // remove [5] 
+        // fullNames.shift(); // remove values from the beginning of Array
+        // fullNames.shift();
+        // fullNames.shift();
+
+        // Removing items in Array with "push" and "pop".
+        fullNames.push('Somename'); // added to the end of array
+        fullNames.pop(); // remove item from end of Array.
+        console.log(fullNames);
+
+        //Splice - Mutates original array
+        // (6) ['Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas'] // ----- Reference, Array before splice.
+        const spesificNames = fullNames.splice(0, 1) // will Move 1 item from position 0 to new array "spesificNames."
+        console.log(spesificNames); // ['Isaksen'] is now in the spesificNames Array.
+
+
+        // ----------------------------
+        // -------------- Syntax ------------
+        // ------------------array.includes(element, start) --------------
+        //The includes() method returns true if an array contains a specified value.
+        // The includes() method returns false if the value is not found.
+        // The includes() method is case sensitive.
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.includes("Mango"); // true
+        //-------------------Start search at position 3
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        fruits2.includes("Banana", 3);
+
+        let ifInclueds = fruits2.inclueds('banana');
+        console.log(ifInclueds);
+
+        //---------------------------------------- Split ----------------------------
+        const msg = "Yes, You Can DO It!";
+        const msg2 = new String("Yes, You Can DO It!");
+    </script>
+</body>
+
+</html>

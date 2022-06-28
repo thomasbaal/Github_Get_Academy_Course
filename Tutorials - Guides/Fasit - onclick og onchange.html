@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myStyle {
+            background-color: coral;
+            border-top-style: dashed;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="myStyle" onclick="clickDiv(this)" id="h1">Extra tyggis</h1>
+    <h1 onclick="clickDiv(this)" id="h2">Sutreklut</h1>
+    <h1 onclick="clickDiv(this)" id="h3">Håp i sikte</h1>
+    <input type="range" id="myRange" onchange="changeRange1(this)">
+    <input type="range" id="slider1" onchange="endreSlider(this)">
+    <br />
+    <input type="text" id="textBoxInput" style="border: 3px solid;">på utsiden
+
+    <div id="idTest" onmouseover="musaOver(this)" style="font-size: 25px;">Labbetuss har bursdag - Test!</div>
+    <p id="id1"></p>
+
+
+
+    <h1 id="tekstIn">Tekst hit</h1>
+    <script>
+        var memRangeValue = 0;
+        console.log(memRangeValue);
+
+        function clickDiv(divInnhold) {
+            console.log(divInnhold);
+            var copiedInnerHtml = divInnhold.innerHTML
+            console.log(copiedInnerHtml);
+            document.getElementById("tekstIn").innerHTML = copiedInnerHtml;
+        }
+        function changeRange1(toParagraph) {
+            var memRangeValue = document.getElementById("myRange").value;
+            document.getElementById("id1").innerHTML = memRangeValue;
+        }
+        function endreSlider(blah) {
+            var sliderValue = blah.value
+            console.log('slide verdi:', sliderValue);
+        }
+
+        function musaOver(overMus) {
+            document.getElementById("tekstIn").innerHTML = overMus.innerHTML
+        }
+
+
+
+    </script>
+</body>
+
+</html>

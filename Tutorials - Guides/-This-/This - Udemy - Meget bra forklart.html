@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        console.log(this); // shows - windows med masse info - Global scope
+
+        const calcAge = function (birthYear) {
+            console.log(2037 - birthYear); // shows 46.
+            console.log(this); // undefined - inside a function, this are in local scope.
+            // this inside a function will not get access to 
+            // in this case, this is not pointing to enything.
+        };
+        calcAge(1991);
+
+        //-------------------------------------------------------------------------------------
+        // This keyword in an arrow function  ---Arrow Functions do not get their own this keyword.---
+        // this in an arrow function will becomr "lexical keyword"
+        // Meaning: it points to the  "this" keyword from its parrent funtion/Global Scope.
+        // which again would be the same as running console.log(this) in global(outside of functions),
+        // it will then show the windows object. as in line 17 above.
+
+
+        const calcAgeArrow = birthYear => {
+            console.log(2037 - birthYear);
+            console.log(this); // shows window object,and will not give info from inside function.
+        };
+        calcAgeArrow(1980);
+
+        // -------------------------------------------------------------------------------------------------------------------------
+        // NOTE!! -- the this keywordwill point to the object that is calling the method.
+        // example below........ jonas.calcAge(); = is the caller also the owner of the method....NOT!! the one inside of the function.
+
+        // when we have a METHOD CALL, the this keyword inside of the method will be the object that is calling the method.
+        // in this case this will be the "jonas" object
+        const jonas = {
+            year: 1991,
+            calcAge: function () {
+                console.log(this); // {year: 1991, calcAge: ƒ} calcAge: ƒ ()y ear: 1991
+                console.log(2037 - this.year); // 2037 - (this:this whole "jonas object").year: 1991 - shows 46 in console.
+
+            },
+        };
+        // jonas.calcAge(); // "jonas" object is calling the method. "jonas is the owner of the method"
+        //-----------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------
+
+        //-------- A FUNCTION IS JUST A VALUE... Example below shows again = this keyword will point to object that is calling the method.
+        jonas.calcAge();
+
+        const matilda = {
+            year: 2017,
+        };
+
+        matilda.calcAge = jonas.calcAge; // just copied the "value/calculation" to matilda.calcAge.
+        matilda.calcAge(); // answer 20, now the result from line 48, shows that matilda is calling the jonas function/ time of execution she was the owner.
+
+        //NOTE!!. "this" keyword is not static it is dynamic, what it pointing to depends on who is the caller!!.
+
+        //------------------------------------Example below takes this further.!!----------------------------------------------------------
+
+        const f = jonas.calcAge; // without parantheses(),we are not invoking or running it, just copy to variable f.
+        // typing f in console shows:
+        // ƒ () {
+        //         console.log(this); // {year: 1991, calcAge: ƒ} calcAge: ƒ ()y ear: 1991
+        //         console.log(2037 - this.year); // 2037 - (this:this whole "jonas object").year: 1991 - sho…
+        //--------------------------------- shows the inside of jonas.calcAge function. -------------------------------------------------
+        f(); // this will not work, its now just a regular function call,"this" keyword is now undefined.
+
+
+
+
+
+    </script>
+</body>
+
+</html>

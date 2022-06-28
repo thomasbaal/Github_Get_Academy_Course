@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // --Functions calling other functions - Nr.36 ---------------------
+function cutFruitPieces(fruit) { 
+    return fruit * 4;
+};
+
+function fruitProcessor(apples, oranges, banana) {
+    const applePieces = cutFruitPieces(apples); // ny const,kaller cutFruitPieces,value=2
+    const orangePieces = cutFruitPieces(oranges); // Same but value 3
+    const bananaPieces = cutFruitPieces(banana); // Same but value 12.
+    
+    const juice = `Juice with ${applePieces} pieces of 🍎apple and 
+    ${orangePieces} pieces of 🍊orange and 
+    ${bananaPieces} pieces of 🍌banana - nam nam.`;
+    return juice;
+};
+
+console.log(fruitProcessor(2, 3, 12)); //calling function and sending values (2, 3, 12)
+//-----------------------------------------------------------------------
+    </script>
+</body>
+</html>

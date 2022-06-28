@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Definition and usage</h1>
+    <h2>The "innerText" property sets or returns the text content of an element.</h2>
+    <h1>The Element Object</h1>
+    <h2>The innerText Property</h2>
+
+    <button id="myButton">Click shit</button>
+
+    <p>The text content of the button element is:</p>
+    <p id="demo"></p>
+
+    <h1>The Differences Between "innerHTML", InnerText and textContent.</h1>
+    <p>element.innerText or node.innerText = Returns the text content of an element or node:
+    </p>
+    <p>"element.innerText = text" or "node.innerText = text" = Sets the text content of an element or node.
+    </p>
+
+    <h2>Differences:</h2>
+    <p>The innerHTML property returns:
+        The text content of the element, including all spacing and inner HTML tags.
+    </p>
+    <p>----</p>
+    <p>The innerText property returns:</p>
+
+    <p>just the text content of the element and all its children, without css hidden text spacing and tags, except
+        script and style elements.
+    </p>
+    <p>
+        The textContent property returns:
+        The text content of the element and all descendaces, with spacing and CSS hidden text, but without tags.
+    </p>
+
+    <h1>Example:</h1>
+    <h2>The differences between innerText, innerHTML and textContent.</h2>
+
+    <p id="myp">
+        See code: This element has extra spacing and contains <span>a span element</span>
+    </p>
+
+    <button onclick="getinnerHTML()">Get innerHTML</button>
+    <button onclick="getinnerText()">Get innerText</button>
+    <button onclick="gettextContent()">Get textContent</button>
+    <button onclick="getClickShit()">Get ShitButton</button>
+
+    <pre id="demo2"></pre>
+    <!--Text in a pre element
+    is displayed in a fixed-width
+    font, and it preserves
+    both      spaces and
+    line breaks-->
+
+
+    <script>
+        function getinnerText() {
+            let text = document.getElementById("myp").innerText;
+            document.getElementById("demo2").innerText = text;
+        }
+        function getinnerHTML() {
+            let text = document.getElementById("myp").innerHTML;
+            document.getElementById("demo2").innerText = text;
+        }
+        function gettextContent() {
+            let text = document.getElementById("myp").textContent;
+            document.getElementById("demo2").innerText = text;
+        }
+        function getClickShit() {
+            let text = document.getElementById("myButton").innerText;
+            document.getElementById("demo2").innerText = text;
+        }
+
+        //--------------------------------------
+        // laget variabel text som henter som står i innerText på knappen med id "myButton"
+        let text = document.getElementById("myButton").innerText;
+        // under hentes id: demo opp og setter her inn innholde av variabel text som ble definert på forrige kode-linje.
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //model
+        const niceWords = [
+        'Du er smart', 
+        'Du ser bra ut i dag', 
+        'Du er en god venn.', 
+        'Du har et godt hjerte og det påvirker alle rundt deg.',
+        'Du kan klare det.',
+        'Du hjelper meg mer enn du tror.'];
+
+        let sizes =[10, 30, 15, 5, 50, 25];
+    
+        let text = '';
+   
+
+        //View
+        show();
+        function show(){
+            let html = '';
+
+            html += `<h1> Kompliment generator</h1><hr>
+            ${text}`;
+            html += `<br><button onclick="showNiceWord()"> Jeg føler meg dritt i dag</button>`
+
+            // for(let i = 0; i < niceWords.length; i++){
+            //     html += createdivWithWord(niceWords[i], sizes[i] );
+            // }
+            // html += `
+            //     ${createdivWithWord('Therese', 20)}
+            //     ${createdivWithWord('Hei', 50)}
+            //     ${createdivWithWord('Trude', 10)}
+            //     ${createdivWithWord('Kåre', 5)}
+            // `;
+
+            let allniceWords = niceWords.map(i => html += `<br>${i}`);
+            //Nivå 2
+
+        
+          
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function createdivWithWord(niceWord, textSize){
+            return `<br><div style="font-size: ${textSize}px;">${niceWord}</div>`
+
+        }
+
+        //Controller
+        function showNiceWord(){
+            let randomIndex = Math.floor(Math.random()* niceWords.length);
+            let randomNiceWord = niceWords[randomIndex];
+            text = randomNiceWord;
+            show();
+        }
+
+    </script>
+</body>
+</html>

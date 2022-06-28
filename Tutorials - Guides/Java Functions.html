@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript Functions</h1>
+    <h3>A JavaScript function is a block of code designed to perform a particular task.</h3>
+    <h3>A JavaScript function is executed when "something" invokes it (calls it).
+        <p>------------------------------------------------------</p>
+        <p>This example calls a function which performs a calculation, and returns the result:</p>
+
+        <p id="demo"></p>
+        <p style="font-family: 'Courier New', Courier, monospace;">The code to be executed, by the function, is placed
+            inside curly brackets: {}</p>
+        <p style="border: solid;">function name(parameter1, parameter2, parameter3) {
+            // code to be executed
+            }</p>
+        <h3>Function Invocation</h3>
+
+        <p>The code inside the function will execute when "something" invokes (calls) the function</p>
+        <ul>
+            <li>When an event occurs (when a user clicks a button)</li>
+            <li>When it is invoked (called) from Javascript code</li>
+            <li>Automatically (self invoked)</li>
+        </ul>
+        <h3>Function Return</h3>
+        <p>
+            When Javascript reaches a return statement, the function will stop executing.
+        </p>
+        <p>
+            If the function was invoked from a statement, Javascript will "return" to execute teh code after the
+            invoking statement.
+        </p>
+        <p>
+            Functions often compute a <b>return value.</b>The return valuse is "returned" back to the "caller".
+        </p>
+        <p>-----------------------------------------------------</p>
+        <p>This example calls a function which performs a calculation and returns the result:</p>
+
+        <p id="calcdemo"></p>
+
+        <h2>Why Functions ?!</h2>
+        <p>you can reuse code: Define the code once, and use it many times.</p>
+        <p>you can use the same code many times with different arguments, to produce different results.</p>
+        <p>----------------------------------------------------</p>
+        <p>Example</p>
+        <p>This example calls a function to convert from Fahrenheit to Celcius:</p>
+
+        <p id="demo"></p>
+
+
+        <script>
+            // var x = myFunction(4, 4);
+            // document.getElementById("calcdemo").innerHTML = x;
+
+            // function myFunction(a, b) {
+            //     return a * b;
+            // }
+            // ----------------------------------------------- 
+            // console.log("Heeeelt konge");
+            // function selvKomponertTekst(p1, p2) {
+            //     return p1 * p2;
+
+            // }
+            // document.getElementById("demo").innerHTML = selvKomponertTekst(4, 3);
+            // ------------------------------------------------
+            function toCelsius(f) {
+                return (5/9) * (f-32);
+            }
+            document.getElementById(demo).innerHTML = toCelsius(77);
+        </script>
+
+    </h3>
+</body>
+
+</html>

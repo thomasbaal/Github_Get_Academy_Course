@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 2px solid blue;
+            height: 30px;
+            width: 30px;
+            float: left;
+        }
+        .førsteFisken{
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="fiskeapp"></div>
+<script>
+
+    //oppgave er å lage tre fisker på fjøl 
+
+    //Model
+    let fisker = ['','','','','','','','','',];
+
+    // let fiskInnFisk = [
+    //     ['torsk', 'laks', 'sild'],
+    //     ['kveite', 'rødspette'],
+    //     ['ørret', 'sei'],
+    // ]
+    let fiskInnFisk = [
+
+        [['torsk', 'skrei'], ['laks', 'røkelaks'], ['sild', 'småsild']],
+        [['kveite', 3], ['test1', 'test2']],
+        [['ørret']],
+    ]
+
+
+
+    //VIEW
+    fisk();
+    function fisk(){
+        let fisken = ' ';
+        // for(let f = 0; f < fisker.length; f++){
+        //     //MODULUS
+        //     let første = f % 3 == 0 ? 'førsteFisken' : '';
+        //     fisken += `<div class="box ${første}"> ${fisker[f]} </div>`  
+        // }
+
+        for(let i = 0; i < fiskInnFisk.length; i++){
+            for(let fff = 0; fff < fiskInnFisk[i].length; fff++){
+                for(let j = 0; j < fiskInnFisk[i][fff].length; j++){
+                    fisken += `<br>${fiskInnFisk[i][fff][j]}   `;
+                }
+                fisken += `<hr>`;
+            }
+            fisken += `<hr>`;
+          
+        }
+      
+
+        document.getElementById('fiskeapp').innerHTML = fisken;
+    }
+
+
+
+    //CONtroller
+
+
+
+</script>
+</body>
+</html>

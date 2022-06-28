@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let markWeight = 78;
+        // const markHeight = 1.69;
+        // let johnWeight = 98;
+        // const johnHeight = 1.95;
+        // // Bmi = mass / Height ** 2 = mass / (height * height)
+
+        // // let markBmi = markWeight / (markHeight ** 2); Alternativ måte å skrive på
+        // let markBmi = markWeight / markHeight ** 2; // Den mest rikktige,men mer avansert 
+        //                                                 //da    man må vite operator precedence.
+        // // let johnBmi = johnWeight / (johnHeight ** 2);    
+        // let johnBmi = johnWeight / johnHeight ** 2;
+        // let markHigherBmi = (markBmi >= johnBmi);
+        // console.log(markHigherBmi);
+
+        //  if (markBmi >= johnBmi) {console.log(`Marks Bmi of (${markBmi}) is higher then Johns Bmi`);} 
+        //  else {console.log(`Johns Bmi is higher then Marks Bmi with a staggering (${markBmi}) Body-Mass-Index`)}
+
+
+
+        // console.log('markBmi' + ' ' +markBmi, 'johnBmi' + ' ' + johnBmi);
+
+        // if sentence goes like this: if (dette er riktig / eller feil ){gjør dette} else {gjør dette i stedenfor}
+
+
+
+
+
+        //--------------------------------------------
+        // *** CODING CHALLENGE 3 ***
+
+        // let dolphinsScore1 = 200
+        // let dolphinsScore2 = 108
+        // let dolphinsScore3 = 89
+
+        // let koalasScore1 = 88
+        // let koalasScore2 = 91
+        // let koalasScore3 = 110
+
+        // let dolphinsAvgScore = (Number(dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3);
+        // console.log(dolphinsAvgScore);
+
+        // let koalaAvgScore = (Number(koalasScore1 + koalasScore2 + koalasScore3) / 3);
+        // console.log(koalaAvgScore);
+
+        // if (dolphinsAvgScore === koalaAvgScore) {
+        //     console.log(`It's a draw, learn to share your prices!.`);
+        // }
+        // else if (dolphinsAvgScore >= koalaAvgScore) {
+        //     console.log(`Dolphins is the winners with an average score of ${dolphinsAvgScore}!...`);
+        // }
+        // else if (koalaAvgScore >= dolphinsAvgScore) {
+        //     console.log(`Koalas is the winners with an average score of ${koalaAvgScore}!...`);
+        // }
+
+        //--------------------------------------------
+        // *** CODING CHALLENGE 3 BONUS ***
+        // let dolphinsAvg = (Number((96+108+89) / 3 )); // kan gjøres slik, men anbefales ikke.
+        // let koalasAvg = (Number((88 + 91 + 110) / 3 )); // kan gjøres slik, men anbefales ikke.
+        // let dolphinsAvg = (dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3;
+        // let koalasAvg = (koalasScore1 + koalasScore2 + koalasScore3) / 3;
+
+        // let dolphinScoreAbove100 = (dolphinsAvg > 100);
+        // let koalaScoreAbove100 = (koalasAvg > 100);
+
+        //---------------------------------------------
+        //*** Coding Challenge 4
+// Test data : 275
+// 40
+// 430
+        let bill = 430;
+        let lowTip = 1.15;
+        let highTip = 1.2;
+        let minimumTip = 50;
+        let maximumTip = 300;
+
+        // if (bill >= minimumTip && bill <= maximumTip) {
+        //     bill *= lowTip
+        // }
+        // else {
+        //     bill *= highTip
+        // }
+        // console.log(bill);
+// ---------------------
+        // Turnary operator challenge.
+        // let bill2 = bill >= 50 && bill <= 300 ? bill * lowTip :
+        //     bill * highTip;
+        // console.log(bill2)    
+//----------
+        // eller forenklet--
+        let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+        console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip} `);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

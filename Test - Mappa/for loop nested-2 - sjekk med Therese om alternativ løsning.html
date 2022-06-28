@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .red {
+        color: red;
+    }
+
+    .blue {
+        color: red;
+    }
+
+    .orange {
+        color: red;
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+
+
+
+
+
+    <script>
+
+        appDiv = document.getElementById("app");
+
+        // Model
+
+        let chk = '';
+
+        let choosenColor = '';
+
+        let bigArray = [];
+        let bigArray2 = [];
+        let bigArray3 = [];
+
+        let colors = [
+            'red', 'blue', 'yellow', 'grey', 'purple', 'brown', 'grey', 'orange', 'black', 'aquamarine'];
+        let random = Math.floor(Math.random() * colors.length);
+        let randomColors = colors[random];
+
+
+
+
+
+        // View
+        showApp();
+        function showApp() {
+            let html = '';
+            html = /*html*/ `
+             Red:   <input onchange="chk = this.value"type="radio" name="colors" value="red"/>
+             Blue: <input onchange="chk = this.value"type="radio" name="colors" value="blue"/>
+             Orange:   <input onchange="chk= this.value" type="radio" name="colors" value="orange"/>
+             Random:   <input onchange="chk= this.value" type="radio" name="colors" value="random"/>
+                
+                <div onclick="divColor(this)">Test</div>
+                <div onclick="divColor(this)">Test</div>
+                <div onclick="divColor(this)">Test</div>
+            
+            `;
+
+
+            // for (i = 0; i < colors.length; i++) {
+            //     // console.log(colors[i]);
+            //     bigArray.push(colors[i]);
+            //     for (i2 = 0; i2 < colors[i].length; i2++) {
+            //         // console.log(colors[i2]);
+            //         bigArray2.push(colors[i2]);
+            //         let testWrite = bigArray3.push(bigArray2[i2]);
+            //     }
+            // }
+
+
+            appDiv.innerHTML = html;
+        }
+
+        showApp();
+        // Controller
+
+
+        function divColor(x) {
+            if (chk != 'random') {
+                x.style.color = chk;
+            } else { chk = randomColors }
+
+
+
+            // let divColor = x.style.color;
+            // divColor = chk
+            // console.log(divColor);
+        }
+
+        function randomColor(x) {
+            x.style.color = randomColors;
+        }
+
+        function setToRandom() {
+
+        }
+
+
+    </script>
+</body>
+
+</html>

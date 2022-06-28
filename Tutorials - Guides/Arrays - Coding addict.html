@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Arrays</h3>
+    <div id="info"></div>
+
+
+    <script>
+
+
+        // array with random math
+        let greetings = ['Hey', 'Hello', 'Hei', 'Cheers', 'Hai',]
+        let names = ['thomas', 'andrea', 'liam', 'cindy', 'zelda',]
+        let randomGreetings = greetings[Math.floor(Math.random() * greetings.length)]
+        let randomNames = names[Math.floor(Math.random() * names.length)]
+
+        let randomNameGreet = randomGreetings + ' ' + randomNames
+        console.log(`${randomGreetings} ${randomNames}`);
+        document.getElementById("info").innerHTML = randomNameGreet;
+
+
+        // create Array - Index always start with [0]
+        const friends = ['John', 'Peter', 'Bob', 'Susy', 45, undefined, null, 'Liam', 'Andrea'];
+
+        // log the full array
+        console.log(friends); // (7) ['John', 'Peter', 'Bob', 'Susy', 45, undefined, null]
+
+        // log the length of the Array
+        console.log(friends.length); // 7
+
+        // log index[1] inside of an array
+        console.log(friends[1]); // 'Peter'
+
+        // create a variable pointing to a index inside the Array
+        let mySister = friends[3]; // pointing to Susy
+
+        // log mySister
+        console.log(mySister); // 'Susy'
+
+        //Change an indexed Array value 
+        friends[4] = 'Thomas' // 45 is replaced with Thomas
+
+        // return last value in the Array
+        console.log(friends[friends.length - 1]) // Last value is Andrea
+
+        // concat - Combining
+        const lastNames = ['Bålsrød', 'Isaksen', 'Myrholt', 'Røsjordet'];
+        const firstNames = ['Thomas', 'Andreas', 'Kurt', 'Marian',]
+        const fullNames = firstNames.concat(lastNames); // Adding Array 'lastNames to the Array 'firstNames
+        console.log(fullNames);
+        // 8) ['Thomas', 'Andreas', 'Kurt', 'Marian', 'Bålsrød', 'Isaksen', 'Myrholt', 'Røsjordet']
+
+        // reverse Array order
+        console.log(fullNames.reverse()); // Values comes out backwords
+        // 8) ['Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas']
+
+        // add values to the start of the Array
+        // fullNames.unshift('Susanne');
+        console.log(fullNames); // 'Susanne' added to the start of the Array.
+        // (9) ['Susanne', 'Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas'
+
+        // add several values at once.
+        // fullNames.unshift('Kenneth', 'Cindy', 'Zelda'); // adding 3 more values
+        console.log(fullNames);
+        // (12) ['Kenneth', 'Cindy', 'Zelda', 'Susanne', 'Røsjordet', 'Myrholt', 'Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas']
+
+        // Removing values from Array.
+        fullNames.shift('Marian', 'Røsjordet', 'Isaksen'); // Removed specific value
+        fullNames.shift([5]); // remove [5] 
+        // fullNames.shift(); // remove values from the beginning of Array
+        // fullNames.shift();
+        // fullNames.shift();
+
+        // Removing items in Array with "push" and "pop".
+        fullNames.push('Somename'); // added to the end of array
+        fullNames.pop(); // remove item from end of Array.
+        console.log(fullNames);
+
+        //Splice - Mutates original array
+        // (6) ['Isaksen', 'Bålsrød', 'Marian', 'Kurt', 'Andreas', 'Thomas'] // ----- Reference, Array before splice.
+        const spesificNames = fullNames.splice(0, 1) // will Move 1 item from position 0 to new array "spesificNames."
+        console.log(spesificNames); // ['Isaksen'] is now in the spesificNames Array.
+        // ----------------------------
+        // -------------- Syntax ------------
+        // ----------------array.includes(element, start) --------------
+        //The includes() method returns true if an array contains a specified value.
+        // The includes() method returns false if the value is not found.
+        // The includes() method is case sensitive.
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.includes("Mango"); // true
+        //-------------------Start search at position 3
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        fruits2.includes("Banana", 3);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

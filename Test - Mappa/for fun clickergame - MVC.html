@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+    }
+
+    .center {
+        width: 500px;
+        border: solid 1px lightgray;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .center2 {
+        width: 500px;
+        text-align: center;
+        border: solid 1px lightgray;
+        border-radius: 20px;
+    }
+
+    div {
+        font-size: 300%;
+    }
+
+    .smiley {
+        width: 500px;
+        background-color: lightblue;
+    }
+
+    button {
+        background: #0e0b22;
+        color: #fff;
+        padding: 0.6rem;
+        margin-top: 20px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background: #1e1d25;
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+
+
+
+        appDiv = document.getElementById("app");
+        // model
+        let points = 0;
+        let pointsPerClick = 1;
+        let smileyIndex = 0;
+        let smileySad = '😒';
+        let smileyHappy = '😎';
+        let sadOrHappySmiley = '';
+
+
+        //view
+        showApp();
+        function showApp() {
+            let html = '';
+
+
+
+
+            sadOrHappySmiley = smileyIndex == 0 ? sadOrHappySmiley = '😒' : sadOrHappySmiley = '😎';
+            console.log(sadOrHappySmiley);
+            html = /*html*/ `
+            <button>Its A Button Goddamnit</button>
+            
+            <div id="smiley" onclick="doClick()">${sadOrHappySmiley}</div>    
+                  
+        
+            
+            
+            `
+            // sadOrHappySmiley = smileyIndex == 0 ? alert('😒') : alert('😎'); // funker
+
+
+            appDiv.innerHTML = html;
+        }
+
+
+
+        //controller
+        function doClick() {
+            smileyIndex = 1 - smileyIndex;
+            showApp();
+        }
+
+        // ${sadOrHappySmiley} 
+    </script>
+</body>
+
+</html>

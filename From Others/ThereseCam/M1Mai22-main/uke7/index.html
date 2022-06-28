@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        // let therese = {name: 'Therese', alder: 32, bosted: 'sandefjord'};
+        // let terje = {name: 'Terje', alder: 47, bosted: 'stavern'};
+
+        const model = {
+            inputname:[],
+            inputs:{
+                name: '',
+                alder: '',
+                bosted: '', 
+            },
+            login:{
+                username: '',
+                password: '',
+            },
+
+           persons: [
+            {name: 'Therese', alder: 32, bosted: 'sandefjord'},
+            {name: 'Terje', alder: 47, bosted: 'stavern'},
+            ],
+
+
+        }
+        
+
+        //View
+        show();
+        function show(){
+            let html = '';
+            // html += `
+            // navn: ${therese.name}<br>
+            // alder: ${therese.alder} <br>
+            // bosted: ${therese.bosted}<br>
+            // navn: ${terje.name}<br>
+            // alder: ${terje.alder} <br>
+            // bosted: ${terje.bosted}`
+            for(let i = 0; i < model.persons.length; i++){
+                html += `
+                navn: ${model.persons[i].name}<br>
+                alder: ${model.persons[i].alder} <br>
+                bosted: ${model.persons[i].bosted}<br>
+             <hr>
+                `
+            }
+
+            html += `navn<input type="text" oninput="model.inputs.name = this.value"><br>
+            alder:<input type="number"  oninput="model.inputs.alder = this.value"><br>
+            bosted:<input type="text"  oninput="model.inputs.bosted = this.value">
+            <button onclick="addPersonToList()"> legg til Person</button>`
+            // persons.map(p => html += `${p.name}`)
+           
+            // let test = persons.find(p => p.name == 'Therese')
+            // console.log(test)
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        //Controller
+        function addPersonToList(){
+            let isOnTheList = false;
+            
+        // model.persons.forEach(p => {
+        //     if(p.name == model.inputs.name) isOnTheList = true;
+        // });
+        for(let i = 0; i< model.persons.length; i++){
+            if(model.persons[i].name == model.inputs.name){
+                isOnTheList = true;
+            }
+            
+        }
+            if(!isOnTheList) {
+                model.persons.push(
+                    {
+                        name: model.inputs.name,
+                        alder : model.inputs.alder,
+                        bosted: model.inputs.bosted
+                    });
+            }
+        //   for(let i = 0; i < model.persons.length;i++){
+        //     if(!model.persons[i].name.includes(model.inputs.name)){
+        //         model.persons.push(
+        //             {
+        //                 name: model.inputs.name,
+        //                 alder : model.inputs.alder,
+        //                 bosted: model.inputs.bosted
+        //             });
+        //     }
+        //   }
+            // model.persons.push(
+            //         {
+            //             name: model.inputs.name,
+            //             alder : model.inputs.alder,
+            //             bosted: model.inputs.bosted
+            //         });
+            
+            // model.persons.push(model.inputs)
+        //  for(let i = 0; i < model.persons.length; i++){
+        //     if(model.persons[i].name == model.inputs.name ){
+        //         console.log('finnes fra før')
+        //       return;
+                    
+     
+            
+        //     }
+        //     else if(model.persons[i].name != model.inputs.name ){
+        //         model.persons.push(
+        //             {
+        //                 name: model.inputs.name,
+        //                 alder : model.inputs.alder,
+        //                 bosted: model.inputs.bosted
+        //             })
+                  
+               
+        //     }
+        //  }
+
+        //    if(!model.persons.includes(model.inputs.name)){
+        //     model.persons.push(
+        //             {
+        //                 name: model.inputs.name,
+        //                 alder : model.inputs.alder,
+        //                 bosted: model.inputs.bosted
+        //             })
+        //    }
+            show()
+
+        }
+
+
+    </script>
+</body>
+</html>

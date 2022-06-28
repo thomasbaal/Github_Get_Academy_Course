@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Demo: Function returing a function</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+
+    <script>
+        function multiple(x) {
+
+            function fn(y) {
+                return x * y;
+            }
+
+            return fn;
+        }
+
+        var triple = multiple(3); // funksjon multiple lagert i variabel triple..
+
+        document.getElementById("p1").innerHTML = triple(4);
+        document.getElementById("p2").innerHTML = triple(3);
+
+
+
+
+
+
+
+
+
+
+
+        // eksempel 1 ------------------------------------------------------------
+        function fruitProcessor(apples, oranges) {
+            console.log(apples, oranges);
+            let juice = `Juice with ${apples} apples and ${oranges} oranges. `;
+            return juice;
+
+        }
+        let appleJuice = fruitProcessor(5, 0); // invoked function
+        console.log(appleJuice);
+        console.log(fruitProcessor(5, 3)); // invoked function with new numbers,but not stored the values.
+
+        let appleAndOrangeJuice = fruitProcessor(4, 2); // funtion call and stored to new variable.
+        console.log(appleAndOrangeJuice);
+        //------------------------------------------------------------------------------
+
+        //eksempel 2 ------------------------------------------------------------------
+        // function Declaration :
+        function calcAge1(birthYear) {
+            return 2037 - birthYear;
+        }
+        const age1 = calcAge1(1991);
+        console.log(age1);
+        // --------------------------------------------------------------------------
+        // eksempel 3 --------------------------------------
+        function resultat(value1, value2) {
+            return value1 + value2
+        }
+        var resultatTotal = resultat(5, 5); // invokes function and store value in variabel.
+        console.log(resultatTotal);
+
+        // eksempel 4  -------------------------------------------
+        function sum(value1, value2) {  // kun 2 parameters 
+            return value1 + value2
+        }
+        let helesum = sum(5, 6, 7) // invoker funksjon å sender med 3 parametere = 
+        console.log(helesum); // parameter 3 vil bli ignorert
+
+    </script>
+</body>
+
+</html>

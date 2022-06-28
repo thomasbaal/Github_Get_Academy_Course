@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Javascript variables can hold different data types: numbers,strings, objects and more:</h2>
+    <p id="demox">her skal det komme resultatet fra x </p>
+    <p id="demo"></p>
+    <h3>Javascript evaluates expressions from left to right.</h3>
+    <h3>Different sequences can produce different results.</h3>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <h3>javascript has dynamic types. This means that the same variable can be used to hold different data types:</h3>
+    See code page: 
+    <p id="demo5"></p>
+    
+    <h3>Strings are written with Quotes (""). you can use single or double quotes:</h3>
+<p id="demo6"></p>
+
+<h3>you can use quotes inside a string, as long as they dont't match the quotes surround the string:</h3>
+<p id="demo7"></p>
+
+
+
+
+    <h3>when adding a number and a string, Javascript will treat the number as a string.</h3>
+
+    <script>
+let z = 16 + " Volvo";
+document.getElementById("demo").innerHTML = z;
+
+
+        let x = { firstName: "John", lastName: "Doe" };
+        document.getElementById("demox").innerHTML = "Dette er kun tekst" + ' ' + x.firstName + ' ' + x.lastName;
+    
+    let demo3 = "Volvo" + 16 + 4;
+    document.getElementById("demo3").innerHTML = demo3;
+    let demo4 = 16 + 4 ;
+    document.getElementById("demo4").innerHTML = demo4;
+    // let demo4 = 16 + 4 + "Volvo";
+    // document.getElementById("demo4").innerHTML = demo4;
+
+    let o; // now o is undefined
+    o = 5; // now o is a Number 
+    o = "John"; // Now o has become a string.
+    document.getElementById("demo5").innerHTML = o;
+
+    let carName1 = "Volvo xc60"; //double quotes
+    let carName2 = 'Volvo xc60'; //single quotes
+
+    document.getElementById("demo6").innerHTML =
+    carName1 + "<br/>" +
+    carName2;
+    
+    let answer1 = "It's alright"; //double quotes
+    let answer2 = "He is called 'Johnny'"; // singlequotes inside doublequotes
+    let answer3 = 'He is called "Johnny"'; // doublequotes inside singlequotes
+
+    document.getElementById("demo7").innerHTML = answer1 + "<br/>" +
+    answer2 + "<br/>" +
+    answer3;
+    </script>
+</body>
+
+</html>

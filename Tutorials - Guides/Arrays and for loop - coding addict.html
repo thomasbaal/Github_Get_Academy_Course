@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Arrays and for loop</h3>
+
+
+    <script>
+
+        // Arays and for loop
+
+        const names = ['Adrea', 'Liam', 'Thomas', 'Marian', 'Andreas'];
+        const lastNames = 'Røsjordet';
+        let newArray = [];
+        console.log(names);
+
+        //for loop - telle arreyet "names" å lagre antall i "i"
+        // forklaring: set i=0; loop til i < Array lengde names.length(antall verdier i Arrayet);pluss på "1" hver loop 
+        for (let i = 0; i < names.length; i++) {
+            console.log(i); // shows: 0,1,2,3,4 som stemmer med antallet i Araeyet "names"
+            console.log(names[i]); // shows 0 andrea - 1 Liam - 2 Thomas - 3 Marian - 4 Andreas
+
+            // så vi har nå lagret data i "names[i]" og kan bruke dette senere.
+            // lage nytt array av lagret data.
+            newArray.push(names[i]); // lagre names[i] til "newArray"
+            console.log(newArray);
+
+            // Adding strings from other variables to array.
+            newArray.push(`${names[i]} ${lastNames}`)
+
+        }
+        console.log(names);
+        console.log(newArray);
+
+
+    </script>
+</body>
+
+</html>

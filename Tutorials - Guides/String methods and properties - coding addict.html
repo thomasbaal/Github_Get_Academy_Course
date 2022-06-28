@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>String methods and Properties</h3>
+
+
+    <script>
+
+        let text = ' Andrea Bravo'; // String
+        let result = text.length;   // variabel . antall characters inside 
+        console.log(typeof text); // String
+        console.log(result); // Number 13
+        console.log(text.length); // Number 13
+        console.log(text.toLocaleLowerCase()); // andrea bravo, in all lowercase
+        console.log(text.toLocaleUpperCase()); // ANDREA BRAVO, in all Uppercase
+        console.log(text.charAt(0)); // Henter opp char at position 0, som er "blank" 
+        console.log(text.charAt(12)); // Henter opp char at position 12, som er "o"
+        console.log(text.charAt(text.length - 1)); // Uansett hvor lang string , returner siste posisjon. (o)
+        console.log(text.indexOf('b')); // viser -1, js er case sensitive, js finner ikke lite "b"
+        console.log(text.indexOf('B')); // index of stor "B" er 8.
+        console.log(text.indexOf('a')); // Hvis det er 2 char som er like i strengen, returner kun den første, nr 6.
+        console.log(text.startsWith('Andrea'));// false, da det er et mellomrom der.
+        console.log(text.trim().toLowerCase().startsWith('andrea')); // i rekkefølge, trim vekk mellomrom, endre til lowercase, string som starter med andrea ?
+        console.log(text.includes('rav')); // stringen inneholder rav? // true
+
+    </script>
+</body>
+
+</html>

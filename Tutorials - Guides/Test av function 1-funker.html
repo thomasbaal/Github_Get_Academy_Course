@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+
+            text-align: center;
+            margin-top: 30px;
+            font-size: xx-large;
+            border: 3px dashed;
+            border-radius: 50%;
+            border-start-end-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="range" id="getWhite" min="0" max="100" step="1" value="1" oninput="calc(this)">
+    <label for="getWhite">Antall Hvite</label>
+    <input type="range" id="getBlack" min="0" max="100" step="1" value="1" oninput="calc(this)">
+    <label for="getBlack">Antall Mørke</label>
+    <br />
+    <input type="number" id="txtBoxWhite">
+    <input type="number" id="txtBoxBlack">
+    <br />
+    <div id="result">Test</div>
+
+    <script>
+        var rangeDataWh = document.getElementById("getWhite");
+        var rangeDataBl = document.getElementById("getBlack");
+        var txtDataWh = document.getElementById("txtBoxWhite");
+        var txtDataBl = document.getElementById("txtBoxBlack");
+        var resultDiv = document.getElementById("result");
+
+        function calc() {
+            var getRangeWh = rangeDataWh.value
+            var getRangeBl = rangeDataBl.value
+            console.log(getRangeWh, getRangeBl);
+            txtDataWh.value = getRangeWh
+            txtDataBl.value = getRangeBl
+
+            antallHvite = parseInt(getRangeWh);
+            antallMørke = parseInt(getRangeBl);
+            console.log(antallHvite, antallMørke);
+            totalPeople = antallHvite + antallMørke;
+            resultDiv.innerHTML = totalPeople;
+        };
+
+
+
+
+
+    </script>
+</body>
+
+</html>

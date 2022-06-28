@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ferdighet 2 - Onclick =>Kjøre funksjon som endrer innerHTML til elementer ut fra Id.</p>
+    <h2 id="a1">Endre H2-1</h2>
+    <h2 id="a2">Endre H2-2</h2>
+    <h2 id="a3">Endre H2-3</h2>
+    <h2 id="a4">Endre H2-4</h2>
+    <h2 id="a5">Endre H2-5</h2>
+    <h2 onclick="doSomething()">Endre</h2>
+    
+   
+
+    <script>
+        function doSomething(){
+            document.getElementById('a1').innerHTML = 'Endret H2-1';
+            document.getElementById('a2').innerHTML = 'Endret H2-2';
+            document.getElementById('a3').innerHTML = 'Endret H2-3';
+            document.getElementById('a4').innerHTML = 'Endret H2-4';
+            document.getElementById('a5').innerHTML = 'Endret H2-5';
+            }
+        
+        
+
+    </script>
+</body>
+</html>

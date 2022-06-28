@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        "use strict";
+
+        const jonas = {
+            firstname: 'Jonas',
+            year: 1991,
+            calcAge: function () {
+                console.log(this);
+                console.log(2037 - this.year);
+
+
+            },
+            // Arrow function REMINDER! - arrow functions DO NOT get their own this keyword,so it wil point to parrent, in this case that is:
+            // THE GLOBAL SCOPE / in this case the window object.
+            // IT WOULD BE THE SAME AS WRITING console.log(this); in the global scope.
+
+            greet: () => console.log(`Hey ${this.firstName}`), // <= this.firstname = parrent/global/window.firstname doesnt exist in global scope,
+            // its inside a function/local scope.
+        };
+        jonas.greet(); // result : Hey undefined
+        // -----------------------------------------------------------------------------------------------------------------
+        //NOTE!! ----- this can become dangerous if variables are declared with "var" and combining this with arrow functions.
+        // NOTE!! -- lets we now declared a variable with var like this : var firstName Matilda <=(look inside arrow function).
+        //NOTE !! jonas.greet(); would show "Hey Matilda" as the arrowfunction is looking to the global scope.
+        // -----------------------------------------------------------------------------------------------------------------
+        // ------------------ Yet another reason not to use var.although If you want your code to run in older browser, you must use var.
+        // -----------------------------------------------------------------------------------------------------------------
+
+        console.log(this);
+
+
+        // ----------------------------------------------------------------! PITFALLS !--------------------------------------------------
+        // ------------------------------------------------------------------------------------------------------------------------------
+        //NOTE !! ---- if you have a regular function call fks "runshow();" inside a function method, """this""" keyword will be "undefined!" 
+        // Example below-- and solution ... (We want to preserve the "this" keyword.)
+        //
+        const thomas = {
+            firstname: 'Thomas',
+            year: 1979,
+            calcAge: function () {
+                // console.log(this);
+                console.log(2037 - this.year);
+
+                const self = this; // create a variable = this,, now we can use this inside the function.
+                const isMillenial = function () {
+                    console.log(this); // this will show "undefined" if not corrected.commented out..
+                    console.log(self); // will show what it should, all info on thomas object.
+                    console.log(self.year >= 1967 && self.year <= 1986); // will now show as true.
+
+                    // console.log(this.year >= 1979 && this.year <= 1996); // result : ERROR.
+                };
+                isMillenial(); // regular function call inside a "function method" (thomas object)  the "this keyword will be set to "undefined"
+
+            },
+        };
+        thomas.calcAge();
+        // ------------------------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------Solution 2 from ES6 --------------------------------------------------------
+        // USE ARROWFUNCTIONS:
+        // as arrowfunctions inherits the surrounding this keyword, it can inheret this from the thomas object and be used.
+        // TO BE USED VISELY :).
+    </script>
+</body>
+
+</html>

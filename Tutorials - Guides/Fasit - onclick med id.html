@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 onclick="clickDiv(this)" id="h1">Extra tyggis</h1>
+    <h1 onclick="clickDiv(this)" id="h2">Sutreklut</h1>
+    <h1 onclick="clickDiv(this)" id="h3">Håp i sikte</h1>
+
+
+    <h1 id="tekstIn">Tekst hit</h1>
+    <script>
+        function clickDiv(divInnhold) {
+            console.log(divInnhold);
+            var copiedInnerHtml = divInnhold.innerHTML
+            console.log(copiedInnerHtml);
+            document.getElementById("tekstIn").innerHTML = copiedInnerHtml;
+        }
+    </script>
+</body>
+
+</html>

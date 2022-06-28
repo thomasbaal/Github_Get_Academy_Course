@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+//model
+        const  model = {
+            totalsum : 0,
+
+            produkter:[
+
+            {
+                name: 'produkt 1',
+                price: 10,
+                inStoc: 4,
+                givenDiscount: '',
+            },
+            {
+                name: 'produkt 2',
+                price: 100,
+                inStoc: 1,
+                givenDiscount: '',
+            },
+            {
+                name: 'produkt 3',
+                price: 5,
+                inStoc: 10,
+                givenDiscount: '',
+            }
+
+            ]
+        }
+
+show()
+        function show(){
+            let html = `totalpris ${model.totalsum}`
+          
+            for(let i = 0; i <model.produkter.length;i++){
+              
+                html += `<div onclick="addToCart(${i})">
+                    produktnavn: ${model.produkter[i].name} <tt>kr ${model.produkter[i].price}</tt>
+                    på lager: ${model.produkter[i].inStoc}</div>
+                    <button ${model.produkter[i].givenDiscount} onclick="giveDiscount(${i})"> rabatt</button>
+                    `
+            }
+            
+
+            document.getElementById('app').innerHTML = html
+
+        }
+
+        //controller 
+        function addToCart(index){
+            if(model.produkter[index].inStoc > 0){
+                model.totalsum += model.produkter[index].price
+                model.produkter[index].inStoc --
+            }
+        
+            show();
+
+        }
+
+        function giveDiscount(index){
+            model.produkter[index].givenDiscount = 'disabled';
+            
+            model.produkter[index].price *= 0.50
+            show()
+        }
+
+    </script>
+    
+</body>
+</html>

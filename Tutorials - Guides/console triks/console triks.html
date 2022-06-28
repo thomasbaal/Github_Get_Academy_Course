@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        "use strict";
+        // printText(); // skriv til console
+        // Liste innhold av variable i consoll
+
+        // merk '' er kun for å vise tekst
+        let a = 10;
+        var b = 15;
+        const c = 20;
+
+        var x = 'Jonas';
+        var z = "thomas";
+
+        console.log('let: ', a, 'var: ', b, 'const: c');
+        console.log('let: ', a, 'var: ', b, 'const: ', c);
+        console.log(a, b, c, x, z);
+        console.log(typeof a);
+        console.log(typeof x);
+        console.log(typeof z);
+
+        // ------------------------------------------------------------------------------------------------
+        // -The assert() method writes a message to the console if an expression evaluates to false.---------
+        // ---------------------console.assert();
+
+        // Syntax - console.assert(expression, message)
+
+        let d = 5;
+        let e = 7;
+
+        const myObject = {
+            firstname: "John",
+            lastname: "Doe"
+        };
+        console.assert(d + e == 10, myObject);// Assertion failed ->
+
+    </script>
+</body>
+
+</html>

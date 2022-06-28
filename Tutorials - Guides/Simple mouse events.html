@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Test av knapper</h2>
+
+    <p id="demo">Javascript can change HTL content.</p>
+    <p id="demo2">Javascript can change HTL content.</p>
+    <p id="demo3">Klikk her.</p>
+    <p id="musover">Klikk her.</p>
+    <p id="musvekk">Klikk her.</p>
+
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello Javascript!"'>Click Me!</button>
+<br/>
+<button type="button" onclick='document.getElementById("demo2").innerHTML = "Mnja"'>Knapp 2 !</button>
+<br/>
+    <button type="button" onclick='document.getElementById("demo3").innerHTML = 
+    "Paragraf 3"'>Endre tekst</button>
+<br/>
+    <button type="button" onmouseover='document.getElementById("musover").innerHTML = "Musa er over"'>Mus over knappen</button>
+    <br/>
+    <button type="button" onmouseleave='document.getElementById("musvekk").innerHTML =
+    "musa er ikke over"'>Mus vekk knappen</button>
+    <br/>
+    <button type="button" onmouseover='document.getElementById("musOver").innerHTML =
+    "Musa er over"'>Musa er over knappen</button>
+</body>
+</html>

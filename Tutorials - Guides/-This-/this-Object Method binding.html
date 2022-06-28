@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    Object Method Binding
+    In these examples, this is the person object:
+
+    <h1>The JavaScript <i>this</i> Keyword</h1>
+
+    <p>In this example, <b>this</b> refers to the <b>person object</b>.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create an object:
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            friends: ['Andrea', 'Cindy', 'Liam',],
+            myFunction: function () {
+                // return this.firstName + ' ' + this.lastName;
+                return this.friends[1]; // extract data from inside array.
+            }
+        };
+
+        // Display data from the object:
+        document.getElementById("demo").innerHTML = person.myFunction();
+
+    </script>
+
+
+</body>
+
+</html>

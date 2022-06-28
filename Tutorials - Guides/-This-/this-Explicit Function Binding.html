@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    The example below calls person1.fullName with person2 as an argument, this refers to person2, even if fullName is a
+    method of person1:
+
+    <h1>The JavaScript <i>this</i> Keyword</h1>
+    <p>In this example <strong>this</strong> refers to person2, even if it is a method of person1:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const person1 = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+        }
+
+        let x = person1.fullName.call(person2);
+        document.getElementById("demo").innerHTML = x; 
+    </script>
+
+</body>
+
+</html>

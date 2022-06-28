@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* .grid-container {
+
+        display: grid;
+        grid-template-columns: 50px 50px 50px;
+
+    } */
+</style>
+
+<body>
+    <div id="arrayapp"></div>
+
+
+
+    <script>
+        let arrayAppDiv = document.getElementById("arrayapp");
+
+
+
+        // model
+
+        let tomfisk = ['', '', '', '', '', '',];
+        let fisk = ['ørret', 'torsk', 'laks', 'sei', 'tryte', 'ørret', 'torsk', 'laks', 'sei', 'tryte', 'ørret', 'torsk', 'laks', 'sei', 'tryte'];
+        let bil = ['citroen', 'peugeout', 'ford', 'toyota', 'land_rover'];
+        // --------------------- Color Arrays ---------------------------------
+        let color = ['red', 'blue', 'yellow', 'green', 'purple', 'orange',];
+        let random = Math.floor(Math.random() * color.length);
+        let randomColors = color[random];
+        let index = '';
+
+        // let arrayApp = document.getElementById("arrayapp");
+        // let arrayAppInner = arrayApp.innerHTML;
+
+
+        // view
+        arraytest();
+        function arraytest() {
+            let html = '';
+            html = /*html*/ `
+       
+        `;
+            for (i = 0; i < fisk.length; i++) {
+                index = i;
+                html += `<div style="color:${randomColors}" >${fisk[i]}</div>`
+                // doSomething(index);
+            }
+
+            arrayAppDiv.style.display = 'grid';
+            arrayAppDiv.style.gridTemplateColumns = '50px 50px 50px'
+
+
+            arrayAppDiv.innerHTML = html;
+        }
+
+
+
+
+
+
+
+
+        // controller
+
+        function doSomething(index) {
+            // console.log(index);
+            doSomethingIndex = index;
+            return doSomethingIndex;
+        }
+    </script>
+</body>
+
+</html>

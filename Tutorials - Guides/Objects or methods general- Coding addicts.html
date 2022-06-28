@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>objects or methods general</h3>
+
+    <script>
+
+
+        // Arrays, functions and objects
+        // objects - key/value pairs methods
+        // dot notation
+
+        const person = {
+            name: 'Liam',
+            lastName: 'bålsrød',
+            age: 8,
+            education: false,
+            married: true,
+            ants: ['Anita', 'Merethe', 'Camilla'],
+            uncles: ['Kurth', 'Lars', 'Jan-Rune'],
+            greeting: function () {
+                console.log('Hello my name is Liam');
+
+            }
+        }
+
+        const age = person.age;
+        console.log(person);
+        console.log(age);
+        console.log(person.name); // Liam
+        console.log(person.ants); // viser arrayet ants.
+        console.log(person.uncles); // viser arrayet uncles.
+        console.log(person.ants[2]); // Camilla
+        person.greeting();
+    </script>
+</body>
+
+</html>

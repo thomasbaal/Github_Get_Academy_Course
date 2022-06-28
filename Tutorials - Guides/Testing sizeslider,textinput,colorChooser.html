@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="sizeSlider" type="range" min="1" max="100" step="10" oninput="showDiv()" />
+    <br />
+    <input id="textInput" type="text" oninput="showDiv()" value="endre teksten her !" />
+    <select id="colorChooser" onchange="showDiv()">
+        <option value="red">Red color</option>
+        <option selected value="green">Green color</option>
+        <option value="blue">Blue color</option>
+    </select>
+    <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('resultatHtml');
+        var sizeSlider = document.getElementById('sizeSlider');
+        var textInput = document.getElementById('textInput');
+        var colorChooser = document.getElementById('colorChooser');
+
+        showDiv();
+
+        function showDiv(){
+            var size = sizeSlider.value;
+            var text = textInput.value;
+            var color = colorChooser.value;
+            
+        }
+    </script>
+</body>
+
+</html>

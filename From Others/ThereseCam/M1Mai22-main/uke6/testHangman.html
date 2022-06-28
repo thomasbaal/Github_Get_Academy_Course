@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+  <script src="controller.js"></script>
+</body>
+<script>
+  
+//   let wordArray = [];
+            // let random = 3;
+            let randomWord = ' ';
+            let guessedChar = '';
+            let randomWordArray = [];
+            let wrongGuesses = 0;
+            let wrongGuessesArray =[];
+            let randomWordLengt = randomWord.length;
+
+            function show(){};
+ 
+   
+      QUnit.test('blitt langt til wrong guessArray', function(assert) {
+       randomWord = 'zebra';
+        guessedChar = 'k';
+        checkChar()
+        let actual = wrongGuessesArray;
+        let expected = ['k'];
+        assert.deepEqual(actual, expected);
+      });
+
+      QUnit.test('blitt langt til i randomWordArray', function(assert) {
+       
+        randomWord = 'ape';
+        randomWordArray = [' _ ', ' _ ', ' _ '];
+        guessedChar = 'a';
+        checkChar()
+        let actual = randomWordArray;
+        let expected = [' a ', ' _ ', ' _ '];
+        assert.deepEqual(actual, expected, randomWordArray);
+      });
+ 
+  </script>

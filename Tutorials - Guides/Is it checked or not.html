@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bckcol {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="enDiv">Div her</div>
+
+
+    <input id="checkboxId" type="checkbox" />
+    <label for="checkboxId">En Checkbox</label>
+
+    <button id="toggleClasslist" onclick="toggle()">Toggle Classlist</button>
+    <button id="toggleClasslist2" onclick="toggle()">Toggle Classlist - 2</button>
+
+    <script>
+        var selectedDiv = document.getElementById("enDiv");
+        // selectedDiv.classList.toggle('bckcol');
+
+        // document.getElementById('checkboxId').checked = selectedDiv.classList.contains('bckcol');
+
+
+        function toggle() {
+            selectedDiv.classList.toggle('bckcol');
+            if (selectedDiv.classList.contains('bckcol')) {
+                selectedDiv.checked = true
+            } else {
+                selectedDiv.checked = false
+            }
+
+            console.log(selectedDiv.checked);
+        }
+
+        function toggle2() {
+            selectedDiv.classList.contains('bckcol');
+            selectedDiv.classlist.contains('bckcol') ? selectedDiv.checked = true : selectedDiv.checked = false;
+        }
+
+    </script>
+</body>
+
+</html>

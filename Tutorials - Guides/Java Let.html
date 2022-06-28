@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Variables defined with let cannot be Redeclared</h2>
+    var variables can be reeclared.
+    <br/>
+    let and const variable provides <b><i>Block Scope</i></b> in Javascript
+    Variables declared inside a {} block cannot be accessed from outside the block:
+
+    <h3>Example</h3>>
+<p>
+    let x = 10;<br/>
+    let x = 2; // dette vil skape syntax error, already declared.
+    console.log(x);
+    console.log(x);
+</p>
+<h2>A var variable can be Redeclared enytime in the document, but might cause problems.</h2>
+<script>
+    let x = 10;
+    let x = 2; // dette vil skape syntax error, already declared.
+    console.log(x);
+    
+    
+
+</script>
+
+
+
+</body>
+</html>

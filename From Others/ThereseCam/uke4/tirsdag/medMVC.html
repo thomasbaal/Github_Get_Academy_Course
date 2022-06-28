@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style type="text/css">
+        div.number {
+            float: left;
+            background-color: beige;
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-family: helvetica;
+            font-size: 200%;
+            border: #bbbbaa solid 4px;
+            border-radius: 10px;
+        }
+
+            div.resultBox {
+                width: 344px;
+                text-align: right;
+            }
+
+            div.firstInRow {
+                clear: left;
+            }
+    </style>
+</head>
+<body>
+
+    <div id="app"></div>
+    <script>
+
+        //model
+        let display = '';
+
+       
+
+
+        //view
+        view();
+        function view(){
+            let html = `
+            <div class="number resultBox">${display}</div>
+
+
+            ${divWithNumber('firstInRow', 'addCharacter', 7)}
+            ${divWithNumber(' ', 'addCharacter', 8)}
+            ${divWithNumber(' ', 'addCharacter', 9)}
+            ${divWithNumber(' ', 'addCharacter', '÷')}
+           
+
+            ${divWithNumber('firstInRow', 'addCharacter', 4)}
+            ${divWithNumber(' ', 'addCharacter', 5)}
+            ${divWithNumber(' ', 'addCharacter', 6)}
+            ${divWithNumber(' ', 'addCharacter', '×')}
+            
+
+            ${divWithNumber('firstInRow', 'addCharacter', 1)}
+            ${divWithNumber(' ', 'addCharacter', 2)}
+            ${divWithNumber(' ', 'addCharacter', 3)}
+            ${divWithNumber(' ', 'addCharacter', '-')}
+
+            ${divWithNumber('firstInRow', 'addCharacter', 0)}
+            ${divWithNumber(' ', 'clearResult', 'C')}
+            ${divWithNumber(' ', 'calculate', '=')}
+            ${divWithNumber(' ', 'addCharacter', '+')}
+
+   
+            `
+        document.getElementById('app').innerHTML = html;
+        }
+
+        function divWithNumber(firstClass, funcName, chara){
+            return `<div class="number ${firstClass}" onclick="${funcName}('${chara}')">${chara}</div>`
+        }
+
+        //controller
+
+        function addCharacter(inputValue){
+            display += inputValue;
+            view();
+        }
+        function calculate(){
+            var calculation = display.replace('×', '*').replace('÷', '/');
+            display = eval(calculation);
+            view();
+
+        }
+        
+        function clearResult() {
+            display = '';
+            view();
+        }
+
+
+
+    </script>
+</body>
+</html>

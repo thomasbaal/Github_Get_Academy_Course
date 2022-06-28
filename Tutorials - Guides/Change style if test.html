@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inPut1">
+    <input type="text" id="inPut2">
+
+    <button id="btn1" onclick="setColor(this)">Sett blå</button>
+    <button id="btn2" onclick="checkColor(this)">Sett gul hvis blå</button>
+    <button id="btn3" onclick="removeColor(this)">fjern farge</button>
+
+    <script>
+        var textInput1 = document.getElementById("inPut1");
+        var textInput2 = document.getElementById("inPut2");
+
+        function setColor(setColor) {
+            textInput1.style.backgroundColor = 'lightblue';
+            console.log(textInput1);
+        }
+
+        function checkColor(checkIfBlue) {
+            if (textInput1.style.backgroundColor == 'lightblue') {
+                console.log('den er blå');
+                document.getElementById("inPut1").style.backgroundColor = 'yellow'
+
+
+
+            } else {
+                console.log('gåkke det');
+            }
+        }
+
+        function removeColor(x) {
+            document.getElementById("inPut1").style.backgroundColor = ''
+
+        }
+
+    </script>
+
+</body>
+
+</html>

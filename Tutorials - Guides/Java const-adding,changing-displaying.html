@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Javascript const</h1>
+    <ul>
+        <li>Variables defined with const cannot be Redeclared</li>
+        <li>Variables defined with const cannot be Reassigned.</li>
+        <li>Variables defined with const have Block SCope.</li>
+    </ul>
+
+    <p style="margin: 20px;">
+        const PI = 3.141592653589793;<br />
+        PI = 3.14; // This will give an error<br />
+        PI = PI + 10; // This will also give an error<br />
+    </p>
+    <h2>Javascript const must be assigned a value when they are declared</h2>
+    <h3>Example: </h3>
+    Correct:<br />
+    const PI = 3.14159
+    <br />
+    Incorrect:<br />
+    const PI;<br />
+    PI = 3.14159
+
+    <h2>When to use const ?</h2>
+    As a general rule , always declare a variable with const unless you know that the value ill change.
+    <br />
+    Use const when you declare:
+    <br />
+    <ul>
+        <li>A new Array</li>
+        <li>A new Object</li>
+        <li>A new Function</li>
+        <li>A new RegExp</A>
+    </ul>
+    <h3>So what is an Array?</h3><br />
+    In Javascript, array is a single variable that is used to store different elements.
+    Is is often used when we want to store list of elements and access them by a single variable.
+    Unlike most languages where array is a reference to the multiple variable, in Javascript array is a single variable
+    that stores multiple elements.
+
+    <h2>Declaring a constant array does Not make the elements unchangable:</h2>
+
+    <h3>Example: (See code) </h3>
+    <p id="demo"></p>
+
+    <h2>But you can Not reassign the array:</h2>
+    <h3>Example: </h3>
+    const cars = ["Saab", "Volvo", "BMW"];<br />
+
+    cars = ["Toyota", "Volvo", "Audi"]; // ERROR
+
+    <h2>Constant Objects</h2>
+    <h3>you can change the properties of a constant objects:</h3>
+    <h3>Example: </h3>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+
+    <h2>Redclaring</h2>
+    <h3>Example :</h3>
+    var x = 2; - Allowed
+    car x = 3; - Allowed
+    x = 4; - Allowed
+
+    <h2>Redeclaring an existing var or let variable const, in the same scope, is not alowed:</h2>
+    <h3>Example: </h3>
+    var x = 2; - allowed
+    const x = 2; - Not allowed, alreaddy declared.
+
+    {
+    let x = 2; - Allowed
+    const x = 2; - Not allowed
+    }
+
+    <h2>Reassigning an existing const variable , in the same scope, is not allowed:</h2>
+    <h3>Example: </h3>
+    const x = 2; - Allowed
+    x = 2; - Not allowed
+    var x = 2; - Not allowed
+    let x = 2; - Not allowed
+    const x = 2; - Not allowed
+
+    {
+    const x = 2; - allowed
+    x = 2; - Not allowed
+    var x = 2; - Not allowed
+    let x = 2; - Not allowed
+    const x = 2; - Not allowed
+    }
+
+    <h2>Redclaring a variable with const, in another scope, or in another block, in allowed:</h2>
+    <h3>Example: </h3>
+    const x = 2; - Allowed
+
+    {
+    const x = 3; - Allowed
+    }
+    {
+    const x = 4; - Allowed
+    }
+
+<h2>Const hoisting - Cariables defined with var are hoisted to the top and can be initialized at any time.</h2>
+<h3>Example: </h3>
+caName = "Volvo;
+var carName; - this sentence is ok.
+
+<h2>Cariables defined with const are also hoisted to the top but not initialized</h2>
+<h2>Meaning - using a const variable before it is declared will result in a Reference error.</h2>
+<h3>Example:</h3>
+alert (carName);
+Const carName = "Volvo"; - Sentence Not ok, const are beeing declared on 2nd line. - will result in Reference error.
+    <script>
+        // create an array:
+        const cars = ["Saab", "Volvo", "BMW"];
+
+        // change an element:
+        cars[0] = "Toyota";
+        cars[1] = "Citroen";
+
+        // Add an element:
+        cars.push("Audi");
+        cars.push("Mercedes");
+
+        //Display the Array:
+        document.getElementById("demo").innerHTML = cars;
+
+        // create an object:
+        const car = { type: "Fiat", model: "500", color: "white" };
+
+        //change a property:
+        car.color = "red"
+
+        // Add a property:
+        car.owner = "Johnson";
+
+        // Display the property:
+        document.getElementById("demo3").innerHTML = "car owner is " + car.owner;
+        document.getElementById("demo4").innerHTML = "car color is " + car.color;
+        document.getElementById("demo5").innerHTML = "car type is " + car.type;
+        document.getElementById("demo6").innerHTML = "car model is " + car.model;
+        document.getElementById("demo7").innerHTML = "type, model, color, owner: "
+            + car.type + ' ' + car.model + ' ' + car.color + ' ' + car.owner; 
+    </script>
+
+</body>
+
+</html>

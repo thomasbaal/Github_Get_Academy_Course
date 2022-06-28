@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball{
+            height: 300px;
+            width: 300px;
+            background-color: black;
+            border-radius: 50%;
+            box-shadow: inset grey 20px 5px 20px;
+             position: absolute; 
+        }
+        .answer{
+            margin-top: 100px;
+            width: 200px;
+            height: 50px;
+            background-color: white;  
+            margin-left: 50px;
+      
+        }
+        .answerBTN{
+            margin-left: 130px;
+            margin-top: 10px;
+        }
+        .log{
+            position: relative;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //hjelpevariabel
+        let appDiv = document.getElementById('app');
+
+        //model
+        let answer = '';
+        const answers = ['JA, gjør det!', 'NEI! det kan du ikke!',
+        'GRATULERER', 'kanskje du skal prøve!', 'IKKE FAEN!', 'NESTE ÅR'];
+
+        let givenAnswers = [];
+  
+
+        //View
+        updateView();
+        function updateView(){
+            let html = '';
+          html += `<div class="ball">
+                <div class="answer">${answer}</div>
+                <button class="answerBTN" onclick="showMeAnAnswer()"> svar</button>
+                </div>
+             
+              `
+            //   for(let i = 0; i< givenAnswers.length; i++){
+            //       html += `     <div class="log">${givenAnswers[i]}</div>`;
+            //   }
+            givenAnswers.map(i => html += `<div class="log" onclick="showI('${i}')">${i}</div>`);
+                // html += `  `
+
+                appDiv.innerHTML = html
+        }
+
+        //Controller
+
+        function showMeAnAnswer(){
+            let random = Math.floor(Math.random()* answers.length);
+            if( answers != ''){
+                answer = answers[random];
+                givenAnswers.push(answer);
+                answers.splice(random, 1);
+
+            }
+            else{
+                answer = 'OUT of ORDER!'
+            }
+            // console.log(random, ' hvilket tall');
+       
+            updateView()
+        }
+
+        function showI(index){
+            console.log(index)
+           let indexOfA= givenAnswers.indexOf(index);
+           console.log(indexOfA)
+
+        }
+
+
+    </script>
+</body>
+</html>

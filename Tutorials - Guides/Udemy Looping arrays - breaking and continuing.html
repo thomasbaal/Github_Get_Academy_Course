@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        //-------------------------------------------FOR LOOP! --------------------------------------------------------
+        const jonas = [ // name of array
+            'Jonas',        // placement/position [0] , where we want to count from.
+            'Schmedtmann',
+            2037 - 1991,
+            'teacher',
+            ['Michael', 'Peter', 'Steven'] // position [4], first one: 'Jonas' counts as "0". so 5 items,
+        ];
+        console.log(jonas);
+
+        // lets for loop.
+        // going to loop this array , which is zero based, so we start at zero.
+
+        for (let i = 0; i < 5; i++) {   // I < 5 = run as long as i is lower then 5( 5 items in array!)
+            console.log(jonas[i]); // shows 5 lines in console, : This becuase we are logging each iteration,"console.log();" is inside the function.
+
+            // jonas
+            // Schmedtmann
+            // 46
+            // teacher
+            // (3) ['Michael', 'Peter', 'Steven']
+
+        };
+
+        //--- Dynamically increase the "for loop" iteration count---------------------------------------------------------
+
+        for (let i = 0; i < jonas.length; i++) { // i < jonas.length = run as long as i is lower then the length of Array named "jonas"
+        };
+
+        // --- Lets collect some other informations on the iterations.
+
+        for (let i = 0; i < jonas.length; i++) {
+            console.log(jonas[i], typeof jonas[i]); // outputs array elements and typeof information.: jonas string, shmedtmann string, 46 'number'
+        };
+
+        // -------------- Lets for practice create a new Array out of typeof data from another Array.
+
+        const types = []; // New empty array!
+
+        for (let i = 0; i < jonas.length; i++) {
+            // reading from Array
+            console.log(jonas[i], typeof jonas[i]);
+            // Filling types Array
+            types[i] = typeof jonas[i];
+
+            types.push(typeof jonas[i]);
+        };
+        console.log(types); // : "string" 1: "string" 2: "number" 3: "string" 4: "object" length: 5
+
+
+        let anArray = 'A Text'; // this is just an example to show how easy it is to create an Array
+        console.log(anArray);
+
+
+
+        //------ A more practial use of for loop. ----------------------------------------------------------
+        // Lets store this birthyears to a new array.
+        const years = [1991, 2007, 1969, 2020];
+        const ages = [];
+
+        for (let i = 0; i < years.length; i++) {
+            ages.push(2037 - years[i]); // taking 2037 - iteration count that is stored in the array.
+        };
+        console.log(ages); // (4) [46, 30, 68, 17]
+
+
+        // ----- Continue loop ------------------------------------------------------------------------------------------
+        console.log('--- ONLY NUMBERS ---------------------');
+        for (let i = 0; i < years.length; i++) {
+            if (typeof years[i] === 'numbers') continue; // true,console runs
+            // if (typeof years[i] !== 'object') continue; // har ikke fått denne til å passere.
+
+            console.log(years[i], typeof years[i]);
+        };
+
+        // --------------- Break loop ------------------------------
+        console.log('----------Break Test -------------------------------');
+        const breakTest = ['labbetuss', 'har', 'bursdag', 45,]
+        console.log(`Original ${breakTest}`);
+        for (let i = 0; i < breakTest.length; i++) {
+            if (typeof breakTest[i] === 'number') break;
+
+            console.log(breakTest);
+        };
+        console.log(breakTest);
+
+
+    </script>
+</body>
+
+</html>

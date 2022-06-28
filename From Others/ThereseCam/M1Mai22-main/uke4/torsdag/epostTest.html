@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+  <script src="lib.js"></script>
+</body>
+<script>
+ 
+
+    QUnit.test('check if @ var', function(assert) {
+        isThisAEmail('the.rese@mail.com')
+        let actual = test;
+        let expected = 'true';
+        assert.equal(actual, expected);
+        });
+        
+      QUnit.test('check if @', function(assert) {
+
+        let actual = isThisAEmail('the.rese@mail.com');
+        let expected = true;
+        assert.equal(actual, expected);
+      });
+      QUnit.module('fiks tekst', function() {
+      QUnit.test('check if not space', function(assert) {
+
+        let actual = isThisAEmail('th ere.se@mail.com');
+        let expected = false;
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test('check if "." befor @', function(assert) {
+
+        let actual = isThisAEmail('the.rese@mail.com');
+        let expected = true;
+        assert.equal(actual, expected);
+        });
+
+        QUnit.test("fix - 'terje'", function (assert) {
+            const actual = fixText('terje');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("fix - 'terje '", function (assert) {
+            const actual = fixText('terje ');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("fix - ' terje'", function (assert) {
+            const actual = fixText(' terje');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("fix - ' terje '", function (assert) {
+            const actual = fixText(' terje ');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+    });
+
+  
+  </script>

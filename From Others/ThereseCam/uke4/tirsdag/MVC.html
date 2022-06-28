@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="app"></div>
+
+ <script>
+     //hjelpevariabel
+
+     let appdiv= document.getElementById('app');
+
+     //model
+     let sum = 0;
+     let count = 0;
+     let average = 0;
+     let inputValue = 0;
+
+     //View
+    view();
+     function view(){
+         let html = /*HTML*/ `
+         <input type="number" oninput="inputValue = this.value">
+         <button onclick="addNumbers()">Legg til </button>
+
+         <p>Sum: ${sum}</p>
+         <p>Antall tall: ${count}</p>
+         <p>gj.snitt: ${average}</p>
+         
+         `;
+
+
+         appdiv.innerHTML = html;
+
+     }
+
+     //controller
+     function addNumbers(){
+        //  alert('funker')
+
+        if(inputValue <= 100 ){
+            sum += parseInt(inputValue);
+            count ++;
+            average = sum / count;
+        }
+        
+        view();
+     }
+
+
+
+ </script>
+</body>
+</html>

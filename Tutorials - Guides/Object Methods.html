@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {        //Objektet
+            firstName: 'Jonas',
+            lastName: 'Schmedtmann',
+            birthYear: 1991,
+            job: 'teacher',
+            friends: ['Michael', 'Peter', 'Steven'],
+            id: 5566,
+            hasDriversLicense: true,
+
+            // calcAge: function (birthYear) {
+            //     return 2037 - birthYear;
+            // }
+            // commented out lines above to make this one work.
+            // accessing person object and extract and calculate.
+            calcAge: function () {
+                return 2037 - this.birthYear;
+            }
+
+
+
+        };
+
+        console.log(person); // viser innholdet av hele objektet.
+        console.log(typeof person);
+        console.log(typeof person.firstname);
+        console.log(typeof person.birthYear);
+        console.log(typeof person.job);
+        console.log(typeof person.friends);
+        console.log(typeof person.id);
+        console.log(typeof person.hasDriversLicense);
+        console.log(person.friends[0]); // extracts value from placeholder 0
+
+        console.log(person.calcAge(1992));
+        // passed directly internally
+        // 1992 sendt til function 
+        // plasserer 1992 i parameter boksen (birthYear) å regner ut
+
+
+        console.log(person.calcAge()); // this funksjonen over brukt her.
+
+
+
+
+    </script>
+</body>
+
+</html>

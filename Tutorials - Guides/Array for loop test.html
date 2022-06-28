@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>JavaScript For Loop</h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<body>
+    <script>
+        let text = "";
+
+        for (let i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+
+        // JOIN -- JOINING ARRAY VALUES (comma separated) -----------------------------------------------------------
+        const alphabetAToK = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',];
+        const alphabetLToR = ['l', 'm', 'n', 'o', 'p', 'q', 'r'];
+        const alphabetSToÅ = ['s', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'æ', 'ø', 'å'];
+
+        console.log(alphabetAToK.join());
+        console.log(alphabetAToK.join(' - ')); // a - b - c - d - e - f - g - h - i - j - k
+
+
+        //--------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------
+        // Lets create the alphabet.
+        const alphabetAlmostFull = alphabetAToK.concat(alphabetLToR);
+        console.log(alphabetAlmostFull);
+        // have to concatinate in two operations with two variables. Tested.. -- For now!
+        let alphabetFull = alphabetAlmostFull.concat(alphabetSToÅ);
+        console.log(alphabetFull);
+
+        for (let i = 0; i < alphabetFull.length; i++) {
+            const itsBeenLooped = alphabetFull[i];
+
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>

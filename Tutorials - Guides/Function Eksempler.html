@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="/Thomas-Code-Box/Cheat Box/JavaScript/Udemy-Function Eksempel-Resized.jpg" alt="">
+
+
+    We declare global variables outside of any function, they are visible from any function. Modern code has few or no
+    globals, that is why it is better to minimize the use of global variables.
+
+    <script>
+        // eksempel funksjon tatt fra udemy.
+        // Note parametere i funksjonen, er kun placeholdere og navn der har ingen betydning hvis funksjonen skal kalle opp flere funksjoner, det er hvordan den blir invoked som er viktig. fks  function calcAge(para1, para2) <- kunne stått andre navn her.
+
+        // forsøke å nummerere rekkefølgen under
+        const cutPieces = function (fruit) { //
+            return fruit * 4;
+        };
+
+        const fruitProcessor = function (apples, oranges) { // 2.(apples, oranges) blir byttet ut med (2, 3), sendt til funksjonens "innside"->3
+
+            const applePieces = cutPieces(apples);  // 3.verdiene (2, 3) blir splittet opp på hver sin linje, kaller opp funksjonen som er lagret under variabel "cutPieces" endret parameter navn til "fruit" , verdien som er 2 for apples ganges * med 4. (det samme med oranges), verdiene har nå gått fra 2,3 til 2*4=8 og 3*4= 12 (8, 12)
+            // -- 2.fortsetter... "return fruit" sender kalkylen tilbake til den som kalte opp funksjonen, Nummer 3. verdien fra 2*4 og 3*4 blir sendt tilbake og lagret i variabelen applePieces og orangePieces. 
+
+
+            const orangePieces = cutPieces(oranges); // 3. samme som over.
+
+            const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;// 4. neste blir å kjøre neste linje i funksjonen, denne!.. laget variabel juice som inneholder "backticks" med text og "${applePieces}" som er variabel navn laget fra tidligere... return juice -> betyr at den returnere innholdet av variabelen juice og sender til den som invoked helt i starten. (console.log(fruitProcessor(2, 3)). 
+            return juice;
+        };
+
+        console.log(fruitProcessor(2, 3)); // 1.invoke fruitProcessor med verdiene (2, 3)
+
+        //-------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------
+
+
+
+
+
+        // Note!! --- We declare global variables outside of any function, they are visible from any function. Modern code has few or no globals, that is why it is better to minimize the use of global variables.
+
+        // example of local variable ------------ bruk console for sjekk.
+        // --------------------------------------------------------------------
+        // function show1() {
+        //     let localvar = "welcome ot w3Docs!"; // its a local variable
+        //     console.log(localvar); // will show the value of variable localvar
+        // }
+        // show1(); // calling the function.
+        // console.log(localvar); // ERROR, because localvar was created inside a function "local"
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+        // // Example of outer variables.
+        // let siteName = 'W3Docs'; // created outside of local scope
+        // function show() {
+        //     let variable = 'Welcome to ' + siteName;
+        //     console.log(variable);
+        // }
+        // show(); // Welcome to W3Docs
+
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+        // Example of the function that uses the local variable.
+
+        // let siteName = 'newSite'; // it’s a outer variable
+        // function show() {
+        //     let siteName = "W3Docs"; // it’s a local variable
+        //     let message = 'Welcome to ' + siteName;
+        //     console.log(message);  //Welcome to W3Docs
+        // }  // the function created and used its own siteName
+        // show();
+        // console.log(siteName);  //newSite,the function didn’t access the outer variable
+
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+        // -------Javascript function arguements.-----------------------------
+
+        // // show invokes function show, and with it the 2 arguements(Welcome, W3Docs), they will be placed inside the function parameter box.
+        // // so show(arg1, arg2) have now become show(Welcome, W3Docs)
+        // function show(arg1, arg2) { // arguments: arg1, ag2
+        //     console.log(arg1 + ' to ' + arg2); // denne kjøres ikke før funskjonen er kalt.
+        // }
+        // show('Welcome', 'W3Docs!'); // Welcome to W3Docs! (*) - Her blir funksjonen kalt
+
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+
+        // Javascript function arguements -------------------------------
+
+        // function sum(arg1, arg2) {
+        //     // arg1 = arg1++; // change "arg1" //
+        //     console.log(arg1);
+        //     let sum = arg1 + arg2;
+        //     console.log(sum);
+        // }
+        // let arg1 = 2;
+        // sum(arg1, 3); // result: 5
+        // console.log(arg1); // 2
+
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+        // Javascript - Return value -------------------
+
+        // function multiply(a, b) {
+        //     return a * b;
+        // }
+        // let result = multiply(2, 3); // declared variable to a function with arguements.
+        // console.log(result); // 6
+
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+
+        // Javascript funtion return value --------------------------------
+
+        // function checkNumber(number) {
+        //     if (number == 10) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        // let number = prompt('Guess the number?', ''); // første setning som blir kjørt automatisk.
+        // if (checkNumber(number)) {
+        //     console.log('it’s  true');
+        // } else {
+        //     console.log('it’s false');
+        // }
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+        // Javascript function value show in console--------- show true if not defined
+        // function doNothing() { /* empty */ }
+        // console.log(doNothing() === undefined); // true
+        // -----------------------------------------------------------------
+        // -----------------------------------------------------------------
+
+        //
+
+    </script>
+</body>
+
+</html>

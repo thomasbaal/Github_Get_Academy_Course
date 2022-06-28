@@ -1,0 +1,58 @@
+* {           /* Global Reset*/
+    margin: 0;    
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {              /* body styling, inherits downwards */
+    background-color: rgb(246, 246, 206);
+    font-family: Arial;
+    font-size: 20px;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+    
+p {                     /* paragraph styling */
+   margin-bottom: 20px; 
+}
+    
+
+.first {            /* paragraph with class first styling */
+  color: red;  
+}
+
+#your-name {            /* form with id your-name styling*/
+    background-color: rgb(240, 207, 40);
+    border: 5px solid rgb(122, 122, 122);
+    width: 400px;
+    padding:25px;
+    margin-top: 30px;
+}
+
+input, button {             /* Styling all button type input elements */
+    padding: 10px;
+    font-size:16px
+}
+
+a {                 /* Styling Links */
+    background-color: yellowgreen;
+}
+
+#course-image {
+    width: 300px;
+    /* height: 400px; */
+    
+}
+
+#your-name h2 {     /* Short Way to style Headline inside form with id "#your-name" */
+    color: olivedrab;
+}

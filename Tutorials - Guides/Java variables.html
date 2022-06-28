@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>When to use Javascript var ?</h1>
+    <p style="border: solid ;">
+        Always declare JavaScript variables with var,let, or const.<br />
+
+        The var keyword is used in all JavaScript code from 1995 to 2015.<br />
+
+        The let and const keywords were added to JavaScript in 2015.<br />
+        <br />
+        If you want your code to run in older browser, you must use var.<br />
+    </p>
+
+    <h1>When to use Javascript const ?</h1>
+    <p>If you want a general rule: always declare variables with const.<br />
+
+        If you think the value of the variable can change, use let.<br />
+
+        In this example, price1, price2, and total, are variables:<br />
+    </p>
+
+    <h2>Just like algebra</h2>
+    variables hold values:
+
+    <h2>Javascript Identifiers</h2>
+    <p>
+        All Javascript variables must be identfied with unique names.
+        <br />
+        <br />
+        This unique names are called identfiers.
+        <br />
+        <br />
+        Identfies can be short names (like x and y) or more descriptive names (age, sum, totalVolume). )
+        </p>
+        <ul>
+            <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+            <li>Names must begin with a letter.</li>
+            <li>Names can also begin with $ and _ (but we will not use it in this tutorial.</li>
+            <li>Names care case sensitive (y and Y are different variables</li>
+            <li>Reserved words (like Javascript keywords) cannot be used as names.</li>
+        </ul>
+
+
+    <h2>4 ways to Declare Javascript Variables</h2>
+    <ul>
+        <li>Using var</li>
+        <li>Using let</li>
+        <li>Using const</li>
+        <li>Using nothing</li>
+    </ul>
+
+    <h2>What are variables</h2>
+    <p>Variables are contianers for storing data (storing data values)</p>
+
+    <h2>Example: </h2>
+
+    <ul>
+        <li>var x = 5;</li>
+        <li>var y = 6;</li>
+        <li>var z = x + y;</li>
+
+    </ul>
+
+
+    <p>In this example, price, price2, and total are variables.</p>
+
+    <p id="demo"></p>
+    <p id="ownership" style="border: 2px;"></p>
+
+    <script>
+        const price1 = 5;
+        const price2 = 6;
+        let total = price1 + price2;
+        document.getElementById("demo").innerHTML =
+            "The total is: " + total;
+
+        let ownership = "thomas" + " " + "Bålsrød"
+        // console.log(x);
+        document.getElementById("ownership").innerHTML =
+        "Ownership belongs to: " + ownership;
+    </script>
+</body>
+
+</html>

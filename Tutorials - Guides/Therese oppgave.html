@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Endring av CSS i Javascript! :)</title>
+    <style>
+        body {
+
+
+            font-size: 30px;
+            color: black;
+            text-shadow: dodgerblue 10px 10px 10px;
+
+        }
+
+        div {
+            font-size: 40px;
+            float: left;
+        }
+
+        img {
+            margin-left: 300px;
+            height: 600px;
+            width: 800px;
+            border-radius: 50%;
+            box-shadow: dodgerblue 10px 5px 5px;
+
+        }
+
+        input {
+            box-shadow: darkslategrey 2px 2px 2px;
+            text-shadow: darkslategrey 2px 2px 2px;
+        }
+
+        .chosen {
+            text-decoration: underline;
+
+        }
+
+        .background {
+            background-color: dodgerblue;
+            color: white;
+            text-shadow: black 2px 2px 2px;
+        }
+
+        .changeBorder {
+            border: solid black 3px;
+            border-radius: 50%;
+
+        }
+
+        .textColor {
+            color: darkblue;
+        }
+
+        .changeShadow {
+
+            box-shadow: dodgerblue 2px 5px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="pickADiv(this)" id="snake"> Slange </div> <br>
+    <div onclick="pickADiv(this)" id="spider"> Edderkopp</div> <br>
+    <div onclick="pickADiv(this)" id="kitten"> Katt</div> <br>
+    <div onclick="pickADiv(this)" id="dog"> Hund</div> <br>
+
+    <br>
+    <input id="background" type="checkbox" onchange="pickAStyle(this)"> ---Endre backgrunn </input><br>
+
+    <input id="textColor" type="checkbox" onchange="pickAStyle(this)"> ---Endre Skrift </input><br>
+
+    <input id="changeBorder" type="checkbox" onchange="pickAStyle(this)"> ---Endre Ramme </input><br>
+    <input id="changeShadow" type="checkbox" onchange="pickAStyle(this)"> ---Endre skyggen </input> <br>
+    <div id="pickApic">Hvor er du</div>
+
+
+    <script>
+        var valgtDiv = document.getElementById("snake");
+        console.log(valgtDiv);
+
+        function pickADiv(valgt) {
+            console.log(valgt)
+            var imgChoser = document.getElementById('pickApic');
+            console.log(imgChoser);
+
+            valgtDiv.classList.remove('chosen');
+            valgtDiv = valgt;
+            valgt.classList.toggle('chosen');
+            console.log(valgt);
+            console.log(valgtDiv);
+            background.checked = valgtDiv.classList.contains('background');
+            changeBorder.checked = valgtDiv.classList.contains('changeBorder');
+            textColor.checked = valgtDiv.classList.contains('textColor');
+
+            changeShadow.checked = valgtDiv.classList.contains('changeShadow');
+            console.log(changeShadow.checked);
+
+            if (valgt.id == 'snake') imgChoser.innerHTML = '<img src="https://cdn.ttgtmedia.com/visuals/ComputerWeekly/Hero%20Images/Snake-hero-AdobeStock_264973680.jpg">';
+            if (valgt.id == 'spider') imgChoser.innerHTML = '<img src="https://cdn.shopify.com/s/files/1/0889/5358/products/product-images_14829_2000x.jpg?v=1571302791">';
+            if (valgt.id == 'kitten') imgChoser.innerHTML = '<img src="https://buddy.no/wp-content/uploads/2020/03/shutterstock_508656808-min-scaled.jpg">';
+            if (valgt.id == 'dog') imgChoser.innerHTML = '<img src="https://res.cloudinary.com/dktx1oojk/image/upload/f_auto,q_90,w_1000,c_scale/web/globalassets/no/anicura-norge/dyr/hunder/print_anicura_dogs_309web.jpg">';
+
+
+        }
+        // sneaky denne. 
+
+        function pickAStyle(stilen) {
+            valgtDiv.classList.toggle(stilen.id);
+            console.log(stilen);
+            console.log(valgtDiv);
+            console.log(stilen.id);
+        }
+    </script>
+</body>
+
+</html>

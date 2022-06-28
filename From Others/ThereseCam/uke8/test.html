@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+
+  <script src="controller.js"></script>
+</body>
+<script>
+
+    const model = {
+        movieInputs:{
+        title: '',
+        year: '',
+        duration: '',
+    },
+    movies:[],
+    }
+    
+  
+    function showMovies(){}
+
+      QUnit.test('legg til film in movies', function(assert) {
+        model.movies = []
+        model.movieInputs.title = 'TestTittel';
+        model.movieInputs.year = '1920';
+        model.movieInputs.duration = '1.20';
+        addMovie();
+    
+        let faktiskVerdi = model.movies;
+        let forventetVerdi = [
+        {
+            title: 'TestTittel',
+            year:'1920',
+            duration: '1.20',
+        },
+    ]
+
+        assert.deepEqual(faktiskVerdi, forventetVerdi);
+      });
+
+
+      QUnit.test('fjern film fra movies', function(assert) {
+        model.movies = [
+        {
+            title: 'TestTittel',
+            year:'1920',
+            duration: '1.20',
+        },
+        {
+            title: 'Tittel',
+            year:'1200',
+            duration: '1.20',
+        },  
+        ]
+        deleteMovie(1);
+        let faktiskVerdi = model.movies;
+        let forventetVerdi = [
+        {
+            title: 'TestTittel',
+            year:'1920',
+            duration: '1.20',
+        }, 
+        ]
+
+        assert.deepEqual(faktiskVerdi, forventetVerdi);
+      });
+   
+  </script>
