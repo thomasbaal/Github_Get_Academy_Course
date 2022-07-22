@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+
+    <script>
+
+        // Es6+
+        // Backtick Characters
+        // Interpolation ${} - insert expression (value)
+
+
+
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        let listItems = '';
+        let item1 = 'BirdyBirdy'
+        const name = 'Thomas';
+        const age = 42;
+        const agecalc = `${age + 2} `
+        const sentence = "Hey it's " + name + ' and he is ' + age + ' years old'; // old way
+
+        // simpler writing and do calculations 
+        const value = `Hey its ${name} and he is ${age} years old, he is good at simple mat: 4 + 4 =  ${2 + 2}` // template literals
+        let testcalc = `${3 + 3}`
+        console.log(sentence);
+        console.log(value);
+        console.log(testcalc);
+        console.log(agecalc);
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        let price = 10;
+        let VAT = 0.25;
+
+        let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+
+
+
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        // dynamically build elements
+        let html = '';
+        html += `<h3>${value}</h3>`
+        html += `<h3>${name}</h3>`
+        listItems += `<li>${item1}</li>`
+        html += `<ul>${listItems}</ul>`
+
+        document.getElementById("show").innerHTML = html;
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+    </script>
+</body>
+
+</html>

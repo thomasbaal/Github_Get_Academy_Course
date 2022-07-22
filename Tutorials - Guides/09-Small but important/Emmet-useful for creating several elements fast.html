@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(226, 213, 205);
+    }
+</style>
+
+<body>
+
+
+    <div id="carbon">
+        <script type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7D653J&amp;placement=flaviocopescom"
+            id="_carbonads_js"></script>
+        <div id="carbonads"><span><span class="carbon-wrap"><a
+                        href="https://srv.carbonads.net/ads/click/x/GTND42JMCABD6237FTBLYKQNCWSIPK7NCWSICZ3JCYBI52JJCVYD653KCKSI623ECEAIE2QJFT7D5KQECTYDKK7KC6SDP27WCYBI6K3EHJNCLSIZ?segment=placement:flaviocopescom;"
+                        class="carbon-img" target="_blank" rel="noopener sponsored"><img
+                            src="https://cdn4.buysellads.net/uu/1/112766/1649796072-OD-Carbon-April-22v2.png"
+                            alt="ads via Carbon" border="0" height="100" width="130" style="max-width: 130px;"></a><a
+                        href="https://srv.carbonads.net/ads/click/x/GTND42JMCABD6237FTBLYKQNCWSIPK7NCWSICZ3JCYBI52JJCVYD653KCKSI623ECEAIE2QJFT7D5KQECTYDKK7KC6SDP27WCYBI6K3EHJNCLSIZ?segment=placement:flaviocopescom;"
+                        class="carbon-text" target="_blank" rel="noopener sponsored">Leverage our powerful DevOps
+                        automation to reduce errors from manual and risky deployments.</a></span><a
+                    href="http://carbonads.net/?utm_source=flaviocopescom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon"
+                    class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span>
+        </div>
+    </div>
+
+    <!-- TOC -->
+    <ul>
+        <li><a href="#create-an-html-file-from-scratch">Create an HTML file from scratch</a></li>
+        <li><a href="#-and-">&gt; and +</a></li>
+        <li><a href="#level-up">Level up</a></li>
+        <li><a href="#multipliers">Multipliers</a></li>
+        <li><a href="#group-an-expression-to-make-it-more-readable">Group an expression to make it more readable</a>
+        </li>
+        <li><a href="#id-and-class-attributes"><code>id</code> and <code>class</code> attributes</a></li>
+        <li><a href="#adding-an-unique-class-or-id">Adding an unique class or id</a></li>
+        <li><a href="#other-attributes">Other attributes</a></li>
+        <li><a href="#adding-content">Adding content</a></li>
+        <li><a href="#adding-an-incremental-number-in-your-markup">Adding an incremental number in your markup</a>
+        </li>
+        <li><a href="#a-reference-for-tags-used-in-the-page-head">A reference for tags used in the page
+                <code>head</code></a></li>
+        <li><a href="#a-reference-for-common-tags">A reference for common tags</a></li>
+        <li><a href="#a-reference-for-semantic-html-tags">A reference for semantic HTML tags</a></li>
+        <li><a href="#a-reference-for-form-elements">A reference for form elements</a></li>
+    </ul>
+    <!-- /TOC -->
+    <hr>
+    <p>Emmet is a pretty cool tool that helps you write HTML very very fast.</p>
+    <p>It’s like magic.</p>
+    <p>Emmet is not something new, it’s been around for years and there is a plugin for every editor out there. On
+        <a href="/vscode/">VS Code</a>, Emmet is integrated out of the box, and whenever the editor recognizes a
+        possible Emmet command, it will show you a tooltip.
+    </p>
+    <p><img src="emmet-vs-code.png" alt="Emmet in VS Code"></p>
+    <p>If the thing you write has no other interpretations, and VS Code thinks it must be an Emmet expression, it
+        will preview it directly in the tooltip, nicely enough:</p>
+    <p><img src="emmet-preview-vs-code.png" alt="Emmet preview in VS Code"></p>
+    <p>Yet I didn’t really know how to use it in all its intricacies until I set out to research and write about it,
+        so I had to learn how to use it in depth.</p>
+    <p>I want to use it in my day to day work, so here’s what I learned about it.</p>
+    <h2 id="create-an-html-file-from-scratch">Create an HTML file from scratch</h2>
+    <p>Type <code>!</code> and you will get a basic HTML boilerplate to work with:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="-and-">&gt; and +</h2>
+    <ul>
+        <li><code>&gt;</code> means child</li>
+        <li><code>+</code> means sibling</li>
+    </ul>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">nav&gt;ul&gt;li
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">div+p+span
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <p>You can combine those to perform more complex markups. VS Code is so nice to show a preview when the Emmet
+        snippet has no</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;div+p+span
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="level-up">Level up</h2>
+    <p>Using <code>^</code> you can level up from any time you used <code>&gt;</code> to create a children:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;div+p^li&gt;span
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <p>You can use it multiple times to “up” more than once:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;div+p^^p
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="multipliers">Multipliers</h2>
+    <p>Any tag can be added multiple times using <code>*</code>:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li*5&gt;p
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="group-an-expression-to-make-it-more-readable">Group an expression to make it more readable</h2>
+    <p>With multiplication in the mix, things start to get a bit more complex. What if you want to multiply 2 items?
+        You group them in parentheses <code>( )</code>:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;(p+span)*2
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="id-and-class-attributes"><code>id</code> and <code>class</code> attributes</h2>
+    <p><code>id</code> and <code>class</code> are probably the most used attributes in HTML.</p>
+    <p>You can create an HTML snippet that includes them by using a CSS-like syntax:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;p.text#first
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <p>You can add multiple classes:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li&gt;p.text.paragraph#first
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text paragraph<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="adding-an-unique-class-or-id">Adding an unique class or id</h2>
+    <p><code>id</code> must be unique in your page, at any time.</p>
+    <p><code>class</code> can be repeated, but sometimes you want an incremental one for your elements.</p>
+    <p>You can do that using <code>$</code>:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$*2&gt;p
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="other-attributes">Other attributes</h2>
+    <p>Attributes other than class and id must be added using <code>[]</code> parentheses:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$*2&gt;p[style="color: red"]
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">color</span><span class="token punctuation">:</span> red</span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">color</span><span class="token punctuation">:</span> red</span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <p>You can add multiple attribute at once:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$*2&gt;p[style="color: red" title="A color"]
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">color</span><span class="token punctuation">:</span> red</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">color</span><span class="token punctuation">:</span> red</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="adding-content">Adding content</h2>
+    <p>Of course you can also fill the HTML with content:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$*2&gt;p{Text}
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="adding-an-incremental-number-in-your-markup">Adding an incremental number in your markup</h2>
+    <p>You can add an incremental number in the text:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$*2&gt;p{Text $}
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <p>That number normally starts at 1, but you can make it start at an arbitrary number:</p>
+    <div class="highlight">
+        <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"
+            class=" language-html"><code class=" language-html" data-lang="html">ul&gt;li.item$@10*2&gt;p{Text $@3}
+      
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item11<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Text 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+      </code></pre>
+    </div>
+    <h2 id="a-reference-for-tags-used-in-the-page-head">A reference for tags used in the page <code>head</code></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Abbreviation</th>
+                <th>Rendered html</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>link</td>
+                <td><code>&lt;link rel="stylesheet" href="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>link:css</td>
+                <td><code>&lt;link rel="stylesheet" href="style.css" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>link:favicon</td>
+                <td><code>&lt;link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>link:rss</td>
+                <td><code>&lt;link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" /&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>meta:utf</td>
+                <td><code>&lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>meta:vp</td>
+                <td><code>&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" /&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>style</td>
+                <td><code>&lt;style&gt;&lt;/style&gt;</code></td>
+            </tr>
+            <tr>
+                <td>script</td>
+                <td><code>&lt;script&gt;&lt;/script&gt;</code></td>
+            </tr>
+            <tr>
+                <td>script:src</td>
+                <td><code>&lt;script src=""&gt;&lt;/script&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="a-reference-for-common-tags">A reference for common tags</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Abbreviation</th>
+                <th>Rendered html</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>img</td>
+                <td><code>&lt;img src="" alt="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td><code>&lt;a href=""&gt;&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td>br</td>
+                <td><code>&lt;br /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>hr</td>
+                <td><code>&lt;hr /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td><code>&lt;!-- --&gt;</code></td>
+            </tr>
+            <tr>
+                <td>tr+</td>
+                <td><code>&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;</code></td>
+            </tr>
+            <tr>
+                <td>ol+</td>
+                <td><code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code></td>
+            </tr>
+            <tr>
+                <td>ul+</td>
+                <td><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="a-reference-for-semantic-html-tags">A reference for semantic HTML tags</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Abbreviation</th>
+                <th>Rendered html</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>mn</td>
+                <td><code>&lt;main&gt;&lt;/main&gt;</code></td>
+            </tr>
+            <tr>
+                <td>sect</td>
+                <td><code>&lt;section&gt;&lt;/section&gt;</code></td>
+            </tr>
+            <tr>
+                <td>art</td>
+                <td><code>&lt;article&gt;&lt;/article&gt;</code></td>
+            </tr>
+            <tr>
+                <td>hdr</td>
+                <td><code>&lt;header&gt;&lt;/header&gt;</code></td>
+            </tr>
+            <tr>
+                <td>ftr</td>
+                <td><code>&lt;footer&gt;&lt;/footer&gt;</code></td>
+            </tr>
+            <tr>
+                <td>adr</td>
+                <td><code>&lt;address&gt;&lt;/address&gt;</code></td>
+            </tr>
+            <tr>
+                <td>str</td>
+                <td><code>&lt;strong&gt;&lt;/strong&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="a-reference-for-form-elements">A reference for form elements</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Abbreviation</th>
+                <th>Rendered html</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>form</td>
+                <td><code>&lt;form action=""&gt;&lt;/form&gt;</code></td>
+            </tr>
+            <tr>
+                <td>form:get</td>
+                <td><code>&lt;form action="" method="get"&gt;&lt;/form&gt;</code></td>
+            </tr>
+            <tr>
+                <td>form:post</td>
+                <td><code>&lt;form action="" method="post"&gt;&lt;/form&gt;</code></td>
+            </tr>
+            <tr>
+                <td>label</td>
+                <td><code>&lt;label for=""&gt;&lt;/label&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input</td>
+                <td><code>&lt;input type="text" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>inp</td>
+                <td><code>&lt;input type="text" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:hidden, input:h</td>
+                <td><code>&lt;input type="hidden" name="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:text, input:t</td>
+                <td><code>&lt;input type="text" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:search</td>
+                <td><code>&lt;input type="search" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:email</td>
+                <td><code>&lt;input type="email" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:url</td>
+                <td><code>&lt;input type="url" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:password, input:p</td>
+                <td><code>&lt;input type="password" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:datetime</td>
+                <td><code>&lt;input type="datetime" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:date</td>
+                <td><code>&lt;input type="date" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:datetime-local</td>
+                <td><code>&lt;input type="datetime-local" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:month</td>
+                <td><code>&lt;input type="month" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:week</td>
+                <td><code>&lt;input type="week" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:time</td>
+                <td><code>&lt;input type="time" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:tel</td>
+                <td><code>&lt;input type="tel" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:number</td>
+                <td><code>&lt;input type="number" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:color</td>
+                <td><code>&lt;input type="color" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:checkbox, input:c</td>
+                <td><code>&lt;input type="checkbox" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:radio, input:r</td>
+                <td><code>&lt;input type="radio" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:range</td>
+                <td><code>&lt;input type="range" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:file, input:f</td>
+                <td><code>&lt;input type="file" name="" id="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:submit, input:s</td>
+                <td><code>&lt;input type="submit" value="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:image, input:i</td>
+                <td><code>&lt;input type="image" src="" alt="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:button, input:b</td>
+                <td><code>&lt;input type="button" value="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>input:reset</td>
+                <td><code>&lt;input type="reset" value="" /&gt;</code></td>
+            </tr>
+            <tr>
+                <td>button:submit, button:s, btn:s</td>
+                <td><code>&lt;button type="submit"&gt;&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td>button:reset, button:r, btn:r</td>
+                <td><code>&lt;button type="reset"&gt;&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td>button:disabled, button:d, btn:d</td>
+                <td><code>&lt;button disabled="disabled"&gt;&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td>btn</td>
+                <td><code>&lt;button&gt;&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td>fieldset:disabled, fieldset:d, fset:d, fst:d</td>
+                <td><code>&lt;fieldset disabled="disabled"&gt;&lt;/fieldset&gt;</code></td>
+            </tr>
+            <tr>
+                <td>fst, fset</td>
+                <td><code>&lt;fieldset&gt;&lt;/fieldset&gt;</code></td>
+            </tr>
+            <tr>
+                <td>optg</td>
+                <td><code>&lt;optgroup&gt;&lt;/optgroup&gt;</code></td>
+            </tr>
+            <tr>
+                <td>select</td>
+                <td><code>&lt;select name="" id=""&gt;&lt;/select&gt;</code></td>
+            </tr>
+            <tr>
+                <td>select:disabled, select:d</td>
+                <td><code>&lt;select name="" id="" disabled="disabled"&gt;&lt;/select&gt;</code></td>
+            </tr>
+            <tr>
+                <td>select+</td>
+                <td><code>&lt;select name="" id=""&gt;&lt;option value=""&gt;&lt;/option&gt;&lt;/select&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>option, opt</td>
+                <td><code>&lt;option value=""&gt;&lt;/option&gt;</code></td>
+            </tr>
+            <tr>
+                <td>table+</td>
+                <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+            </tr>
+            <tr>
+                <td>textarea</td>
+                <td><code>&lt;textarea name="" id="" cols="30" rows="10"&gt;&lt;/textarea&gt;</code></td>
+            </tr>
+            <tr>
+                <td>tarea</td>
+                <td><code>&lt;textarea name="" id="" cols="30" rows="10"&gt;&lt;/textarea&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="custom-slant"></div>
+
+    <div id="outro">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>

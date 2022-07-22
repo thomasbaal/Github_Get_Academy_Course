@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // simple function ---------------------------------------------
+        // var Msg = 'Hello';
+        // var Msg2 = 'Goodbye';
+        // function welcomeMsg(Msg, Msg2) {
+        //     document.write(`${Msg} Mofo <br/>`)
+        //     document.write(`${Msg2} Mofo`)
+        // }
+        // welcomeMsg(Msg, Msg2);
+        // ----------------------------------------------------------------
+
+
+
+        // simpel function with return.-----------------------------------------
+
+        // function welcomeMsg(msg1, msg2, msg3, msg4) {
+        //     alert(msg1);
+        //     alert(msg2);
+        //     alert(msg3);
+        //     alert(msg4);
+        //     var name = prompt("What is your name"); // storing "prompt function to a variable", then returns it to the caller.
+        //     return name;
+        // }
+        // var firstName = welcomeMsg('Hi', 'You', 'Motherfucker', 'Wazzup !!') // This the caller / Invoker
+
+        // -------------------------------------------------------------------------------------
+
+
+
+        // ----------------------Simpel Function Calc with return-------
+        var a = 5;
+        var b = 6;
+        operator = '*';
+        let answer = 0;
+
+        function multiply(a, b) {
+            return a * b
+        }
+
+
+        function whatToCalc(a, b) {
+            if (operator == '*') { multiply(a, b) }
+            answer = multiply(a, b)
+            document.write(` a x b = ${answer}`)
+        }
+
+        whatToCalc(a, b);
+        // ---------------------------------------------------------------
+    </script>
+</body>
+
+</html>

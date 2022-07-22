@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript For In Loop</h2>
+    <p>The for in statement loops through the properties of an object:</p>
+
+
+    <h3>Example Explained</h3>
+    <ul>
+        <li>The for in loop iterates over a person object</li>
+        <li>Each iteration returns a key (x)</li>
+        <li>The key is used to access the value of the key</li>
+        <li>The value of the key is person[x]</li>
+    </ul>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+        const person = { fname: "John", lname: "Doe", age: 25 };
+
+        let txt = "";
+        let txt2 = "";
+        for (let x in person) {
+            txt += person[x] + " ";
+        }
+        // -------------------------------------------------------------------
+        const person2 =
+        {
+            fname: 'thomas',
+            lname: 'Bålsrød',
+            birthyear: 1979,
+            birthmonth: 8,
+            birthday: 25,
+            // age: function () {
+            //     let yeartoday = new Date().getFullYear();
+            //     return yeartoday - this.birthyear
+            // },
+        }
+        for (let properties in person2) {
+            txt2 += person2[properties] + ' ';
+        }
+        // console.log(person2.age());
+
+
+        document.getElementById("demo").innerHTML = txt;
+        document.getElementById("demo2").innerHTML = txt2;
+
+        // more examples..
+          // loop test for-in
+        // The for in statement loops through the properties of an object:
+        const object = 
+        {
+            driver: 'thomas',
+            license: true,
+            age: 43,
+            lastname: 'bålsrød',
+        }
+
+        
+        let toLog = '';
+        for(x in object) {
+            toLog += `${object[x]} `;
+            
+            console.log(toLog);
+        }
+        console.log(toLog);
+        
+        const numbers = [23, 54, 65, 76, 34];
+
+        let toLog2 = '';
+        for(x in numbers) {
+            toLog2 += numbers[x] + ' ';
+            console.log(toLog2);
+        }
+        console.log(toLog2);
+
+    </script>
+
+</body>
+
+</html>

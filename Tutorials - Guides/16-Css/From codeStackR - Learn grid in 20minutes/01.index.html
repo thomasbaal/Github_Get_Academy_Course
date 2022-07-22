@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* means that element size includes borders and padding, if this is not used, we would have to calculate in margin and padding by itself*/
+        font-size: 30px;
+    }
+/*  Need 1."grid-container"
+         2."grid-items"  */
+
+    .grid-container {
+        height: 100vh;
+        border: 10px solid #14a76c;
+        display: grid;
+        /* Explicit or implicit values on columns and row */
+        /* Explicit are defined manually and stays that way: .
+           Implicit values are set automatically  */
+        /* grid-template-columns: 20% 20% 20%; */ /*Specify here how many colums: "100px 200px 50px Etc, -Use px,percetange,fr, - Using px will make it static, want to fill page,use % or fr */
+
+    /* Fraction */
+        /* grid-template-columns: 1fr 2fr 1fr;  */
+
+    /* Mix */
+        /* grid-template-columns: 1fr 100px auto; */
+ /* ------------------------------------------------------------------ */
+    /* repeat(how many repeates, size) */
+        /* grid-template-columns: repeat(2, 1fr); */
+    
+
+    /* Rows! */
+        /* grid-template-rows: 100px 100px; */
+        /* Example above: 2 columns. and 2 rows = 4 items, but we got 5 divs in the grid, the last div will be implicitcally set automatically,because its not defined. */
+/* ---------------------------------------------------------------------- */
+/* grid-auto-rows */
+/* grid-template-columns: repeat(1, 1fr);
+grid-template-rows: 100px 100px;
+grid-auto-rows: 200px; */
+/* Example above: 1 column,then 2 rows with 100px each, the rest will be automatically set to 200px, so if more divs are added,they will be 200px (need to set the class ofcourse)  */
+/* ---------------------------------------------------------------------------------------------------------- */
+/* justify-items: ; */
+/* grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 200px 200px;
+justify-items: center; */
+/* example above: will center and space them out evenly in 3 columns. */
+/* ------------------------------------------------------------------------------------------- */
+/* justify-items: start; */
+/* grid-template-columns: repeat(3, 1fr); */
+/* grid-template-rows: 200px 200px; */
+/* justify-items: start;  */
+/* Start column will be pushed to the left, the rest wil be spaced out evenly (sing: end wil do the opposite)*/
+/* ------------------------------------------------------------------------------------------------- */
+/* justify-items: stretch; */
+/* grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 200px 200px;
+justify-items: stretch; */
+/* Stretch will not space them out with huge space in between, it will stretch to the next flex item. */
+/* ------------------------------------------------------------------------------------------------------------- */
+/* align-items  */
+/* grid-template-columns: repeat(3, 1fr); */
+/* grid-template-rows: 200px 200px; */
+/*justify-items: center; /* centered Horizontally*/
+/*align-items: center; /* centered vertically -- This one can also be used with "start and end"*/
+/* centers evenly horizontally and vertically */
+/* ----------------------------------------------------------------------------------------- */
+/* justify-content: space-arround, space-evenly, space-between; */
+/* align-content: space-arround, space-evenly, space-between; */
+/* grid-template-columns: repeat(3, 150px); 
+grid-template-rows: 200px 200px;
+justify-content: space-around;
+align-content: space-between; */
+/* Note - here we change the spacing on the content inside the container. */
+/* ------------------------------------------------------------------------------------------ */
+/* grid-column-gap, grid-row-gap */
+/* grid-template-columns: repeat(3, 1fr); 
+grid-template-rows: 200px 200px;
+grid-column-gap: 5px;
+grid-row-gap: 10px; */
+/* Creating a Explisit value on gaps. */
+/* ------------------------------------------------------------------------------------------------ */
+/*    */
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 200px 200px;
+grid-column-gap: 20px;
+grid-row-gap: 20px;
+
+
+    }
+
+    .grid-item {
+        background-color: #ccc;
+        border: 4px solid #ff652f;
+        padding: 20px;
+    }
+
+    .item-1 {
+/* ---------------------------------------------------------------------------------------------- */
+    /* grid-columns-start,end */
+        /* grid-column-start: 1; */
+        /* grid-column-end: 3; */
+        /* NOTE!!!, need to look at this as lines and rows, and not the items itselves. */
+    /* at item-1: start at column-line1, end at column-line 3 */
+    /* grid-column: 1 / 3; - same as over , shorthand */
+/* ---------------------------------------------------------------------------------------------- */
+    }
+    .item-2 {
+/* ---------------------------------------------------------------------------------------------- */
+/* Justify self */
+justify-self: center; /* will center in on itself to the size of the text inside*/
+align-self: center;
+/* ---------------------------------------------------------------------------------------------- */
+        /* grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 3;
+        grid-column-end: 4; */
+      /*  grid-row: 1 / 3; /* start / end*/
+        /* grid-column: 3 / 4; */
+/* ---------------------------------------------------------------------------------------------- */
+
+    }
+    .item-3 {
+/* ---------------------------------------------------------------------------------------------- */
+    /* grid-row: 2 / 4; /*Shorthand - start / end */
+    /* grid-column: 1 / 3;  */
+    /* grid-area: 2 / 1 / 4 / 3; /*row start / column start / row end / column end */
+    /* can be written like this: grid-area: 2 / 1 span 2 / span 2: row start 2 / column start 2 / row take 2 spots / column take 2 spots*/ 
+/* ---------------------------------------------------------------------------------------------- */
+    }
+    .item-4 {
+
+    }
+    .item-5 {
+
+    }
+</style>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item-1">item-1</div>
+        <div class="grid-item item-2">item-2</div>
+        <div class="grid-item item-3">item-3</div>
+        <div class="grid-item item-4">item-4</div>
+        <div class="grid-item item-5">item-5</div>
+        <div class="grid-item item-6">item-6</div>
+        <div class="grid-item item-7">item-7</div>
+    </div>
+    <script>
+
+
+    </script>
+</body>
+</html>

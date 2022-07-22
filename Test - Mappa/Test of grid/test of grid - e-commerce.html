@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 5px;
+        background-color: #AAA;
+    }
+    .wrapper {
+        display: grid;
+        grid: 50px auto / repeat(7, 1fr);
+        grid-template-areas: 
+                             "featured featured featured header header header header"
+                             "side-bar products products products products products feature2"   
+                             "side-bar bonus-1 . . . bonus-3 feature3"
+                             "side-bar . bonus-2 . . . bonus-4"
+                             "side-bar footer footer footer footer footer footer ";
+        grid-gap: 5px;
+    }
+
+.grid-items {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    
+    color: white;
+    border-radius: 2px;
+    
+}
+
+.featured {
+    grid-area: featured;
+background-color: red;
+}
+
+.header {
+    grid-area: header;
+background-color: black;
+}
+
+.side-bar {
+    grid-area: side-bar;
+    background-color: green;
+    color: white;
+}
+
+.products {
+    grid-area: products;
+    background-color: blue;
+    color: white;
+
+}
+
+.feature2 {
+grid-area: feature2;
+background-color: red;
+color: white;
+}
+
+.feature3 {
+grid-area: feature3;
+background-color: red;
+color: white;
+}
+
+.bonus-1 {
+    grid-area: bonus-1;
+    background-color: pink;
+}
+.bonus-2 {
+    grid-area: bonus-2;
+
+    background-color: pink;
+
+}
+.bonus-3 {
+    grid-area: bonus-3;
+
+    background-color: pink;
+
+}
+.bonus-4 {
+    grid-area: bonus-4;
+
+    background-color: pink;
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: orange;
+}
+
+
+
+</style>
+<body>
+    <img src="https://www.practicalecommerce.com/wp-content/uploads/2017/10/101217-complex-layout.png">
+
+    <div class="wrapper">
+        <div class="grid-items featured">Featured Merchandising</div>
+        <div class="grid-items header">Header</div>
+        <div class="grid-items side-bar">Side Bar</div>
+        <ul class="grid-items side-bar">
+            <li>Side Bar 1</li>
+            <li>Side Bar 2</li>
+            <li>Side Bar 3</li>
+            <li>Side Bar 4</li>
+            <li>Side Bar 5</li>
+        </ul>
+        <div class="grid-items products">Products</div>
+        <div class="grid-items feature2">Feature2</div>
+        <div class="grid-items feature3">Feature3</div>
+
+        <div class="grid-items hidden"></div>
+        <div class="grid-items bonus-1"><img src="https://ae01.alicdn.com/kf/Sf8978ec891be463882ac90199a29f92ca/ORUICQ-4-Ports-USB-Car-Charge-48W-Quick-7A-Mini-Fast-Charging-For-iPhone-11-Xiaomi.jpg_Q90.jpg_.webp"></div>
+        <div class="grid-items bonus-2">Bonus 2</div>
+        <div class="grid-items bonus-3">Bonus 3</div>
+        <div class="grid-items bonus-4">Bonus 4</div>
+        <div class="grid-items footer">Footer</div>
+        <div class="grid-items "></div>
+        <div class="grid-items "></div>
+        <div class="grid-items "></div>
+    </div>
+</body>
+</html>

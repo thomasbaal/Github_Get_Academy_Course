@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="restaurant"></div>
+
+    <script>
+
+
+        //model
+        'use strict';
+        const restaurant = {
+            name: 'Classico Italiano',
+            location: 'Viva Angelo Tavanati 23, Firenze, Italy',
+            categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+            startermenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+            mainmenu: ['Pizza', 'Pasta', 'Risotto'],
+
+            // creating orders/functions inside the object. RETURNING VALUES FROM ARRAY:: ("function call below //controller")
+            // Some Explanation:
+            // this points to the object as a whole (restaurant)
+            // order: in combo with function (starterIndex, mainIndex) is telling that its a function.
+            // (starterIndex, mainIndex): both parameters.
+            // so line below example: return [restaurant.startermenu[1], restaurant.mainmenu[2]];
+            order: function (starterIndex, mainIndex) {
+                return [this.startermenu[starterIndex], this.mainmenu[mainIndex]];
+            }
+        };
+
+
+        //--Default values-----------------------------------------------------------
+        const [p, q, r] = [8, 9]; // IF YOU DONT KNOW THE ARRAY AND TRY TO DECONSTRUCT.
+        console.log(p, q, r);// shows: 8 9 undefined
+        // Setting default values:
+        const [s = 1, t = 1, u = 1] = [8, 9]; // setting all values to "1".
+        console.log(s, t, u);//shows: 8 9 1, array item that do not exist, will get the value of 1.
+
+
+        // nested array -------------------------------------------------------
+        const nested = [2, 4, [5, 6]];
+        //grab item1 in array 1, and the second array.
+        // const [i, , j] = nested; // comenting out to avoid conflict.
+        // console.log(i, j);//shows: 2 - (2) [5, 6]
+
+        //Case scenario, we want all items listed individually!?.
+        // const [k, l, [m, n]] = nested
+        // console.log(k, l, m, n);// shows: 2 4 5 6
+        // same,but skipping:
+        const [i, , [j, k]] = nested
+        console.log(i, j, k);//shows: 2 5 6 , skipping 4
+        //---------------------------------------------------------------------
+
+
+
+
+        // ------------------------ assigning array items to variables, showing the slow way, then the destructuring way.
+        const arr = [2, 3, 4];
+        const a = arr[0];
+        const b = arr[1];
+        const c = arr[2];
+
+        // -----------------------------------------------------------------------
+        const [x, y, z] = arr; // Destructuring array, Original array intact 
+        console.log(x, y, z);
+        // -----------------------------------------------------------------------
+
+
+        // -----------------------------------------------------------------------
+        const [first, second] = restaurant.categories // destructuing, grabbing nr1 and nr2 from restaurant.categories
+        console.log(first, second); // Italian Pizzeria
+        // -----------------------------------------------------------------------
+
+
+        // -----------------------------------------------------------------------
+        const [firsts, , seconds] = restaurant.categories // destructuring, grabbing 1st item,skip nr2,and pick nr3.
+        console.log(firsts, seconds); //shows: Italian Vegetarian
+        // -----------------------------------------------------------------------
+
+        //-----------------------------------------------------------------------
+        let [main, , secondary] = restaurant.categories // as example: main dish, skip , secondary dish.
+        console.log(main, secondary);
+        // PS!: assigned to let here to avoid conflict below.(reassigning a const variable)
+        //-----------------------------------------------------------------------
+
+
+
+        // Case Cenario! --- Restaurant owner wanted to switch dishes (main switch with secondary): showing the slow/old way vs destructuirng way.
+        // taken in to account that the variables are beeing used to point to restaurant.categories...!..
+
+        //----- old way:     
+
+        // const temp = main; // commented out to avoid conflict below.
+        // main = secondary;
+        // secondary = temp
+        // console.log(main, secondary); //shows: the 2 dishes has switched places.
+
+        //----- destructuring way:
+        // Reasigning values and switching dishes:
+        [main, secondary] = [secondary, main]    // No need to re-use variables to make this happen
+        console.log(main, secondary); //shows: Vegetarian Italian
+
+
+
+        //view
+        show();
+        function show() {
+            let html = '';
+            html += /*html*/ `
+            <div>${restaurant}</div>
+            
+            `
+
+
+
+            document.getElementById("restaurant").innerHTML = html;
+        }
+
+
+
+        // Controller
+
+        console.log(restaurant.order(2, 0)); // invoking: object = restaurant,,function named order inside object,
+        // asking to return item 2 under: restaurant.startermenu[2] and item 0 under restaurant.mainmenu[0].
+        // log gives us: (2) ['Garlic', 'Pizza']
+
+        // Deconstructering the order:
+        const [starter, mainCourse] = restaurant.order(2, 0);
+        console.log(starter, mainCourse); // shows: Garlic Bread Pizza
+
+
+
+
+    </script>
+</body>
+
+</html>

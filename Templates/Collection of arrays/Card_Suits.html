@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* body {
+        background-color: lightgrey;
+        background-size: 350px 150px;
+
+    } */
+
+    .div {
+        border: 2px solid blue;
+        width: 300px;
+        background-color: rgb(241, 251, 253);
+    }
+
+    .center {
+        align-items: center;
+    }
+
+    img {
+        width: 280px;
+    }
+</style>
+<body>
+    <div id="app"></div>
+    
+<!-- <img src="https://www.rema.no/wordpress/wp-content/uploads/2020/06/Pizza-pa%CC%8A-grillen_w1600hq75-1600x1080.jpeg"> -->
+
+    <script>
+        let html = '';
+const actors = 
+{
+    names: 
+    [
+        {
+            firstname: 'Robert',
+            lastname: 'De Niro',
+        },
+
+        {
+            firstname: 'Leonardo',
+            lastname: 'Decaprio'
+        },
+
+        {
+            firstname: 'Morgan',
+            lastname: 'Freeman'
+        }
+    ]
+             
+    
+}
+
+const person = {
+    name: 'Thomas',
+    shirt: 'white'
+}
+
+
+const introducer = (name, shirt) => {
+    const person3 = {
+        name: name,
+        shirt: shirt
+    }
+
+const intro = `Hi, my name is ${person3.name} and the color of my shirt is ${person3.shirt}`
+
+    return intro
+}
+
+
+
+const movies = {
+    name: 'Die Hard',
+    categories: 
+    [
+        'Action',
+        'Drama',
+        'Thriller'
+    ],
+
+    pg: 13,
+    runtime: 126,
+    released: true,
+}
+
+// console.log(typeof movies.released);
+// -----------------------------------------
+const addfood = {
+    newfood: {
+        foodname: '',
+        pictures: [],
+        ingredients: [],
+        sizes: [],
+        infotext: '',
+        cost: '',
+        deliverable: '',
+        delivercost: '',
+        instock: '',
+    }
+
+}
+
+const food = {
+    pizza: 
+    {
+        pictures: 
+        [
+            'https://www.rema.no/wordpress/wp-content/uploads/2020/06/Pizza-pa%CC%8A-grillen_w1600hq75-1600x1080.jpeg',
+            'https://get.pxhere.com/photo/dish-food-cuisine-pizza-ingredient-california-style-pizza-quiche-pizza-cheese-tarte-flamb-e-zwiebelkuchen-baked-goods-Flamiche-italian-food-flatbread-recipe-produce-dessert-comfort-food-fast-food-pissaladi-re-pastry-american-food-french-food-sicilian-pizza-tart-1611473.jpg',
+            
+
+        ],
+        ingredients: 
+        [
+            'Tomato',
+            'Ham',
+            'Beef-Jerkey',
+            'Cheese'
+        ],
+        
+        sizes: 
+        [
+            'Small',
+            'Medium',
+            'Large'
+        ],
+        infotext: 'Pizza med masse tilbehør som egentlig ikke smaker så godt ?',
+        cost: 17,
+        deliverable: true,
+        delivercost: 5,
+        instock: 3,
+
+    },
+
+
+    sandwitch: '',
+    rollerburger: '',
+    bigmac: '',
+
+}
+html += `<div class="div">
+<img src="${food.pizza.pictures[0]}";
+<h3 class=>${food.pizza.infotext}</h3>
+</div>`
+document.getElementById("app").innerHTML = html;
+
+// endre stock
+food.pizza.instock = 5;
+// adding a new food item.
+addfood.newfood.foodname = 'Hamburger'
+// add a property value to the new item.
+addfood.newfood.deliverable = true
+addfood.newfood.cost = 7
+// add property values in ingredients array.
+addfood.newfood.ingredients.push('Tomato', 'Burger-Bread')
+console.log(addfood.newfood.ingredients);
+console.log(addfood.newfood);
+console.log(introducer('thomas', 'black'));
+
+// practices ------------
+const howManyLetters = () => {
+    const phrase = 'hey, can you go to the grocery store with me ?'
+    for(letters in phrase) {
+    }
+}
+
+howManyLetters()
+console.log(letters);
+
+const arrNumbers = [23, 65, 56, 432, 6]
+
+for(numbers in arrNumbers) {
+    console.log(arrNumbers[numbers]);
+}
+
+
+
+
+
+
+
+
+
+
+// for loop -----------------------------------------------------------------------------------
+
+
+</script>
+</body>
+</html>

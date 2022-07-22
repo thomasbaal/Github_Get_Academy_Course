@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 135px 135px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px 10px;
+        /* background-color: lightblue; */
+    }
+
+    /* .grid-container {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 135px 135px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px 10px;
+        background-color: lightblue;
+    } */
+
+    .grid-item {
+        border: 1px solid black;
+        font-size: 30px;
+    }
+
+    .card {
+        background-color: lightgray;
+        width: 500px;
+        background-position: center;
+        align-items: center;
+    }
+
+    .bodies {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="grid-container card">
+        <div class="grid-item">grid-item 1</div>
+        <div class="grid-item"><img src="/img/head1.png"></div>
+        <div class="grid-item">grid-item 3</div>
+    </div>
+    <div class="grid-container card">
+        <div class="grid-item">grid-item 1</div>
+        <div class="grid-item">grid-item 2</div>
+        <div class="grid-item">grid-item 3</div>
+    </div>
+
+
+
+    <!-- <div class="bodies"> -->
+    <div id="showPictures"></div>
+    <!-- </div> -->
+
+
+    <script>
+        //Model
+        let imagesObject = {
+            groupheads: [
+                '<img src="/img/head1.png"',
+                '<img src="/img/head2.png"',
+                '<img src="/img/head3.png"',
+                '<img src="/img/head4.png"'
+            ]
+        }
+
+        let arrHeads = [];
+        arrHeads.push('<img src="/img/head1.png"')
+        arrHeads.push('<img src="/img/head2.png"')
+        arrHeads.push('<img src="/img/head3.png"')
+        arrHeads.push('<img src="/img/head4.png"')
+        showPic = '';
+        showPic2 = '';
+        index = 0;
+
+        //View
+        showPictures();
+        function showPictures() {
+            html = '';
+            html += /*html*/`
+            <div class="grid-container card">
+        <div class="grid-item">grid-item 1</div>
+        <div class="grid-item">${imagesObject.groupheads[1]}</div>
+        <div class="grid-item">grid-item 3</div>
+    </div>
+        `
+
+
+            document.getElementById("showPictures").innerHTML = html;
+        }
+
+        //Controller
+        function showPicture() {
+            showPic += arrHeads[0];
+            showPictures();
+        }
+
+        function showPicture2() {
+            index++
+            showPictures();
+        }
+
+        // placeholder -----------------------------------
+    //     Funker
+    // <div class="grid-container">
+    //     <div class="grid-item">⬅️</div>
+    //     <div class="grid-item"><img src="/img/head2.png"></div>
+    //     <div class="grid-item">➡️</div>
+
+
+    // <div class="grid-container">
+    //             <div class="grid-item">⬅️</div>
+    //             <div class="grid-item">${imagesObject.groupheads[1]}</div>
+    //             <div class="grid-item">➡️</div>
+    //         </div>    
+
+    </script>
+</body>
+
+</html>

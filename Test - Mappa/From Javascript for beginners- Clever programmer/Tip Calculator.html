@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" placeholder="Type a Number" type="Number" value="1">
+    <input id="input2" placeholder="Choose one: *  -  /  +  " type="text" value="*">
+    <input id="input3" placeholder="Type a Number" type="Number" value="2">
+    <br/>
+    <div id="result"></div>
+    <button onclick="calculate(num1, symbol, num2)">Calculate</button>
+    <div style="font-size: 50px;">&#128517;</div>
+    
+
+
+    div.number${🐿️$;}*1000
+    <div class="">🐿1</div>
+    <div class="">🐿2</div>
+    <div class="">🐿3</div>
+    <div class="">🐿4</div>
+    <div class="">🐿5</div>
+    <div class="">🐿6</div>
+    <div class="">🐿7</div>
+    <div class="">🐿8</div>
+    <div class="">🐿9</div>
+    <div class="">🐿10</div>
+    <script>
+        "use strickt";
+      
+
+      
+
+       const groceries = ['🍌', '🍎', '🍊', '🍐']
+       console.log(groceries);
+       console.log(groceries.join(' - '));
+       console.log(groceries.sort());
+       const groceries2 = ['🍐', '🍎', '🍌', '🍊']
+        const groceriescombo = [...groceries, ...groceries2]
+        const str = 'Somegoddamntext_mkay!?.'
+        const strNum = '123456789'
+        const strNum2 = '1,2,3,4,5,6,7,8,9'
+        const strNum2Splitted = strNum2.split(',')
+
+        console.log(strNum2Splitted);
+        console.log(strNum2.split(','));
+        // console.log(strNum.split());
+
+        // console.log(str.split());
+        // console.log(groceries);
+        // console.log(groceries2);
+        // console.log(groceries.slice(1,3));
+        // console.log(groceriescombo);
+
+
+       
+
+
+        //    function greet(name) {
+//     greet = `Hi ${name}, nice to greet you ! Mofo !`
+//     console.log(greet);
+//    }
+
+//    greet('Thomas')
+
+//    let html = '';
+//    function logSomething() {
+    
+//     info1 = 'this is a function without a parameter'
+//     info2 = 'And it prints out whaterever your hearts desire ! ;)'
+//     info3 = 'More info on this is not needed !, shud of !'
+// // html += `${info1} <br/> ${info2} <br/> ${info3}  <br/>`
+// html += `<ul>
+//             <li>${info1}  
+//                 <p></p> 
+//             <li>${info2}  
+//             <li>${info3} 
+//          <ul/>   
+//          <p>${info3}</p>
+//         `
+        
+
+// document.write(html)
+//    }
+// logSomething()
+
+// -------------------------------------------------------------------------------------------------
+
+// function sum(food, tipAmount) {  // One way to write function
+//     return food + tipAmount
+// }
+
+// const sumArrow = (food, tipAmount) => { // A faster way , by using arrow functions.
+//     return food + tipAmount
+// }
+   
+// const arrowSum = (food, tipAmount) => food + tipAmount // A even faster way,arrow functions if not specified will return value"implicit return" !!.
+
+
+// function calculateFoodTotal(food, tip) {
+//    const tipPercentage = tip / 100 ;
+//     const tipAmount = food * tipPercentage;
+//     // const total = sum(food, tipAmount)
+//     // const total = sumArrow(food, tipAmount)
+//     const total = arrowSum(food, tipAmount)
+//     return total
+// }
+
+// let total_sum = calculateFoodTotal(47, 6)
+// console.log(total_sum);
+// -------------------------------------------------------------------------------------------------
+
+
+
+// food = Number(prompt('How much was the food ?')); // wrapping it in "number()" so it doesnt return value as string.
+//         console.log('food', food);
+//     tipPercentage = Number(prompt('Tip % ?')) / 100 ;
+//     console.log('tipPercentage', tipPercentage);
+//     tipAmount = food * tipPercentage;
+//     console.log(`tipAmount: ${tipAmount}`);
+//     total = food + tipAmount
+//     alert(total)
+
+// practice ----
+function add(num1, num2) {
+    return num1 + num2
+}
+function subtract(num1, num2) {
+return num1 - num2
+}
+function divide(num1, num2) {
+return num1 / num2
+}
+function multiply(num1, num2) {
+return num1 * num2
+}
+
+
+function calculate(num1, symbol, num2) {
+if(symbol === '*')
+{
+    total = num1 * num2
+}if(symbol === '/')
+{
+    const div = divide(num1, num2)
+    return div
+}if(symbol === '-')
+{
+    const sub = subtract(num1, num2)
+    return sub
+}else 
+{
+    const add2 = add(num1, num2)
+    return add2
+}
+}
+// console.log(calculate(2, x, 3));
+// console.log(calculate(2, '+', 3));
+
+
+    </script>
+</body>
+</html>

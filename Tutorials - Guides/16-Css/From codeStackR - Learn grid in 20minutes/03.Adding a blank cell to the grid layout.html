@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* means that element size includes borders and padding, if this is not used, we would have to calculate in margin and padding by itself*/
+        font-size: 30px;
+    }
+/*  Need 1."grid-container"
+         2."grid-items"  */
+
+
+/* for grid area: you would need to add properties to the item classes as well. */
+/* Changed name on html to make it easier to see */
+    .grid-container {
+        height: 100vh;
+        border: 10px solid #14a76c;
+        display: grid;
+/* ---------------------------------------------------------------------------------------------- */
+        /* grid-template-areas, but shortened down.: ; */
+        grid-template: "header header header header " 60px /* all 4 columns 60px high*/
+        "nav main . ads" 1fr  /* !important The "." signals a emtpy cell witch points to nothing. all 1 fraction high*/
+        "footer footer footer footer" 60px /*all 60px high*/  
+        /*The hights have now been defined, now for the width*/
+        / 20% 1fr 15%; /*the "/" is defining that we now type in the width's*/ 
+        
+/* ---------------------------------------------------------------------------------------------- */
+
+    }
+
+    .grid-item {
+        background-color: #ccc;
+        border: 4px solid #ff652f;
+        padding: 20px;
+    }
+
+    .item-1 { 
+/* ---------------------------------------------------------------------------------------------- */
+    grid-area: header;
+/* ---------------------------------------------------------------------------------------------- */
+    }
+   
+    .item-2 {
+/* ---------------------------------------------------------------------------------------------- */
+    grid-area: nav;
+/* ---------------------------------------------------------------------------------------------- */
+    }        
+    
+    .item-3 {
+
+/* ---------------------------------------------------------------------------------------------- */
+    grid-area: main;           
+/* ---------------------------------------------------------------------------------------------- */
+    }
+    
+
+    .item-4 {
+        
+/* ---------------------------------------------------------------------------------------------- */
+    grid-area: ads;               
+/* ---------------------------------------------------------------------------------------------- */
+    }
+        
+    
+    .item-5 {
+
+/* ---------------------------------------------------------------------------------------------- */
+    grid-area: footer;                   
+/* ---------------------------------------------------------------------------------------------- */
+    }
+
+    
+</style>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item-1">Item - 1 header</div>
+        <div class="grid-item item-2">Item - 2 nav</div>
+        <div class="grid-item item-3">Item - 3 main</div>
+        <div class="grid-item item-4">Item - 4 ads</div>
+        <div class="grid-item item-5">Item - 5 footer</div>
+    </div>
+    <script>
+
+
+    </script>
+</body>
+</html>

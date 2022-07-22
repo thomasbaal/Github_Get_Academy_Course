@@ -1,0 +1,8 @@
+body {
+    background-color: black;
+    color: white;
+}
+.grid-contaier {
+    display: grid;
+    grid-template-columns: 200px 100px;
+}

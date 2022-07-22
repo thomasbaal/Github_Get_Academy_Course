@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        'use strict';
+        const restaurant = {
+            name: 'Classico Italiano',
+            location: 'Viva Angelo Tavanati 23, Firenze, Italy',
+            categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+            startermenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+            mainmenu: ['Pizza', 'Pasta', 'Risotto'],
+            openinghours:
+            {
+                thu:
+                {
+                    open: 12,
+                    close: 22,
+                },
+
+                fri:
+                {
+                    open: 11,
+                    close: 23,
+                },
+
+                sat:
+                {
+                    open: 0,
+                    close: 23,
+                },
+            },
+            // creating orders/functions inside the object. RETURNING VALUES FROM ARRAY:: ("function call below //controller")
+            // Some Explanation:
+            // this points to the object as a whole (restaurant)
+            // order: in combo with function (starterIndex, mainIndex) is telling that its a function.
+            // (starterIndex, mainIndex): both parameters.
+            // so line below example: return [restaurant.startermenu[1], restaurant.mainmenu[2]];
+            order: function (starterIndex, mainIndex) {
+                return [this.startermenu[starterIndex], this.mainmenu[mainIndex]];
+            }
+        };
+
+        // grabbing object properties and saves it to variables.
+        const { name, openinghours, categories } = restaurant;
+        console.log(name, openinghours, categories);
+
+        // changing object keys names:
+        const {
+            name: restaurantName,
+            openinghours: hours,
+            categories: tags
+        } = restaurant;
+        console.log(restaurantName, hours, tags);
+
+        // setting default values, if your looking for array values that doesn't exist:
+        const { menu = [], startermenu: starters = [] } = restaurant;
+        console.log(menu, starters);
+
+
+        // Mutating variables.
+        let a = 111;
+        let b = 999;
+        const abj = { a: 23, b: 7, c: 14 };
+        // {a, b} = abj; // will give error, cant start line with {}, think its a code-block
+        ({ a, b } = abj);   // putting it inside "()" will work.
+        console.log(a, b);
+
+    </script>
+</body>
+
+</html>

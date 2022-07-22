@@ -1,0 +1,5 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "Tobermory.es6-string-html"
+    }
+}

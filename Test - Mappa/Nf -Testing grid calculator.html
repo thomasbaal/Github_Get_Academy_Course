@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Grid</title>
+</head>
+<style>
+.wrapper {
+display: grid;    
+grid-template-columns: repeat(4, 50px);
+box-sizing: border-box;
+row-gap: 7px;
+
+margin: 5px;
+padding: 5px;
+border: 3px solid black;
+border-radius: 10px;
+width: 230px;
+height: 260px;
+background-color: rgb(17, 22, 22);
+font-size: 30px;
+column-gap: 5px;
+    
+}
+
+
+
+.grid-items {
+display: flex;
+align-items: center;
+justify-content: center;
+   border: 3px solid rgb(206, 137, 137);
+   border-radius: 10px;
+   background-color: rgb(141, 57, 9);
+}
+
+.grid-item-screen {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 30px;
+    margin-top: 3px;    
+    background-color: rgb(248, 238, 226);
+}
+
+.grid-item-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+border: none;
+font-size: 20px;
+background-color: transparent;
+}
+
+.grid-item1 {
+
+}
+.grid-item2 {
+
+}
+.grid-item3 {
+
+}
+
+.grid-item4 {
+    
+}
+.grid-item5 {
+    
+    
+}
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="grid-item-screen grid-items"></div>
+        <div class="grid-item-logo grid-items">👻</div>
+        <div class="grid-item1 grid-items">1</div>
+        <div class="grid-item2 grid-items">2</div>
+        <div class="grid-item3 grid-items">3</div>
+        <div class="grid-item4 grid-items">×</div>
+        <div class="grid-item5 grid-items">4</div>
+        <div class="grid-item6 grid-items">5</div>
+        <div class="grid-item7 grid-items">6</div>
+        <div class="grid-item8 grid-items">−</div>
+        <div class="grid-item9 grid-items">7</div>
+        <div class="grid-item10 grid-items">8</div>
+        <div class="grid-item11 grid-items">9</div>
+        <div class="grid-item12 grid-items">+</div>
+        <div class="grid-item11 grid-items">0</div>
+        <div class="grid-item11 grid-items">.</div>
+        <div class="grid-item11 grid-items">÷</div>
+        <div class="grid-item11 grid-items">=</div>
+    
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

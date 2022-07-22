@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+
+
+
+        let age = 30;
+        let oldAge = age;
+        age = 31;
+        console.log(age);
+        console.log(oldAge);
+
+        const me = {
+            name: 'Thomas',
+            age: 30,
+        };
+
+        // source of confusion --
+        const friend = me;
+        friend.age = 27;
+        console.log('Friend:', friend);
+        console.log('Me', me);
+
+        // ------------Primitives - Objects ---------------------------------------------------------------
+
+        //PRIMITIVES: Number, String, Boolean, Undefined, Null, Symbol, Bigint
+        //Objects: Object literal, Arrays, Functions, Many more.
+
+        // You declare a object variable with an "OBJECT LITERAL"
+        const person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+
+        // An objec definition can span several lines.
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+        // The name:values pairs in javascript is called properties.
+        // Property	Property Value
+        // firstName	John
+        // lastName	Doe
+        // age	50
+        // eyeColor	blue
+
+        // access the object in two ways
+
+        // objectname.propertyname
+        // or
+        // objectName['propertyName']
+        const arrayTest = ['bil', 'båt']
+        console.log(typeof arrayTest); // object
+        console.log(arrayTest[0]); // bil
+
+
+
+    </script>
+
+
+</body>
+
+</html>

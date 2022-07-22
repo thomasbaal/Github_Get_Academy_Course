@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+
+      <div id="app"></div>
+      <script>
+            //
+            let r = 100;
+            let g = 180;
+            let b = 200;
+
+            let farge = '';
+
+
+            let classArray = ['red', 'blue', 'green', 'yellow', 'coral', 'aquamarine'];
+            let random = Math.floor(Math.random() * classArray.length);
+            console.log(random);
+
+
+            show();
+            function show() {
+
+                  let html = '';
+
+                  html += `<div onclick="changeColor()" style="background-color: rgb(${r},${g},${b});"> clickMe-First </div>`
+                  html += `<div style="background-color:red">
+<div onclick="changeColor()" class="${classArray[random]}"> clickMe </div>
+         <div onclick="colorChanger()">masse rart</div>
+         <div style="color: ${farge};" onclick="colorChanger()">noen overalt jo</div>
+   </div>`
+
+
+
+
+                  document.getElementById('app').innerHTML = html;
+            }
+
+            function changeColor() {
+
+                  random = Math.floor(Math.random() * classArray.length);
+
+                  show();
+            }
+
+            function colorChanger() {
+                  farge = classArray[random];
+                  show();
+            }
+
+      </script>
+</body>
+
+</html>

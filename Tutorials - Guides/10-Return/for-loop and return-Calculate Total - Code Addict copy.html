@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Calculate Total</h3>
+
+
+
+    <script>
+        // eksempel på enkelt regnestykket.
+        const bensin = [20, 40, 100, 30];
+        const mat = [10, 30, 50];
+
+
+        function calculateTotal(arr) {// "arr" er kun et kallenavn for "array"
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) { // alltid test for loop , skal stoppe ved length of array.
+
+                total += arr[i] // LAGRE array og iteration data til variabelen total ->
+
+                // lister opp alle summene fra function call mat 90.og bensin 190
+
+            }
+            console.log(total); // her vil den vise summan av mat og bensin hver for seg.
+            // return total; // return bety å sende tilbake data fra den som kalte opp funksjonen.
+            // i dette tilfelle er dette calculateTotal(mat;) og calculateTotal(bensin);.
+            // vi lagrer dette under med const matTotal og bensinTotal.
+            //Note.. const matTotal = calculateTotal(mat;) fungerer også som en INVOKE.
+
+            return total; // returnerer etterspurte verdier
+        }
+
+        const matTotal = calculateTotal(mat);
+        const bensinTotal = calculateTotal(bensin);
+        const totallyRandomTotal = calculateTotal([501, 230, 435, 4332]); // passing values directly.
+
+
+        //-- setting up keys and loggin to console.
+        console.log({
+            mat: matTotal,
+            bensin: bensinTotal,
+            random: totallyRandomTotal,
+        });
+
+        /* log above shows: {mat: 90, bensin: 190, random: 5498}
+            bensin: 190
+            mat: 90
+            random: 5498
+            */
+    </script>
+</body>
+
+</html>

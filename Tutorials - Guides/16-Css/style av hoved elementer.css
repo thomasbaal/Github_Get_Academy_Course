@@ -1,0 +1,32 @@
+.felles{
+ border: solid;border-color: black;border-radius: 5px;
+ text-align: center;
+}
+h1{
+ color: yellow;background-color: lightgray;
+}
+h2{
+ color: green;
+}
+h3{
+ color: orange;
+}
+p{
+ color: purple;
+}
+
+li{
+ color: red;
+}
+li:hover{
+ color: blue;
+}
+
+div {
+    color: aquamarine;
+}
+
+btns {
+    color:coral
+}
+

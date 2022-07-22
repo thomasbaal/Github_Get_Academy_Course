@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="blackjackView"></div>
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // model
+        let firstCard = 13;
+        let secoundCard = 3;
+        let hasBlackJack = false;
+
+        let isAlive = true;
+        let sum = firstCard + secoundCard;
+
+        let message = 'Want to play a round ?';
+        let messageEl = document.getElementById("message-el")
+
+        let sumEl = document.getElementById("sum-el")
+
+        let cardsEl = document.getElementById("cards-el")
+
+
+
+
+
+
+
+
+        // view
+        mainView();
+        function mainView() {
+            let html = '';
+            html += /*html*/ `
+            <h1>Blackjack</h1>
+            <p>${message}</p>
+            <p>${`Cards:  ${firstCard} ${secoundCard}`}</p>
+            <p>${`Sum: ${sum}`}</p>
+            <button onclick="startGame()">START GAME.</button> <br>
+            <button onclick="newCard()">NEW CARD.</button>
+           
+            `
+
+            document.getElementById("blackjackView").innerHTML = html;
+        }
+
+
+
+
+
+        //controller
+        function startGame() {
+
+            if (sum <= 20) {
+                message = 'Do you want to draw a new card?'
+            } else if (sum === 21) {
+                hasBlackJack = true
+                message = "You've got Blackjack !"
+            } else {
+                message = "You're out of the game!"
+                isAlive = false;
+            }
+            mainView();
+        }
+
+        function newCard() {
+            let card = 5;
+            sum += card;
+            console.log(sum, card);
+            console.log('Drawing a new card from the deck!');
+
+            mainView();
+        }
+
+
+
+    </script>
+</body>
+
+</html>

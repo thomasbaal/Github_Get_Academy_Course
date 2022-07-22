@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        // loop test for-in
+        // The for in statement loops through the properties of an object:
+        const object = 
+        {
+            driver: 'thomas',
+            license: true,
+            age: 43,
+            lastname: 'bålsrød',
+        }
+
+        
+        let toLog = '';
+        for(x in object) {
+            toLog += `${object[x]} `;
+            
+            console.log(toLog);
+        }
+        console.log(toLog);
+        
+        const numbers = [23, 54, 65, 76, 34, true, 'somename'];
+        const numbers2 = [231, 543, 654, 765, 346, true, 'somename', 32];
+
+        let toLog2 = '';
+        for(x in numbers) {
+            toLog2 += numbers[x] + ' ';
+            console.log(toLog2);
+        }
+        console.log(toLog2);
+
+
+        // loop test for-of.
+        // The JavaScript for of statement loops through the values of an iterable object.
+
+        // let toLog3 = '';
+        // for(x of object) {
+        //     toLog3 += x 
+        //     console.log(x); // error: object not iterable
+        // }
+        // console.log(x); // // error: object not iterable
+
+        let toLog4 = '';
+        for(x of numbers) {
+            toLog4 += numbers[x]
+            console.log(x);
+        }
+        console.log(x);
+// ------------
+
+        let toLog5 = '';
+        let i = 0;
+        for(i = 0; i < numbers.length; i++) {
+            toLog5 += numbers[i]
+            console.log(typeof numbers[i], numbers[i]);
+            // console.log(typeof numbers[i]);
+            // console.log(numbers[i]);
+        }
+        console.log(i);
+        console.log(numbers[i]);
+        console.log(numbers2[i]);
+
+        // --------- for-Each --------
+        let text = '';
+        numbers.forEach(value => {
+            
+            text += 'Yo dude '
+            document.getElementById("show").innerHTML = text;
+        });
+        
+        </script>
+</body>
+</html>

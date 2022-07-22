@@ -90,9 +90,9 @@ function showJavaScript() {
 
 function showBodyGame() {
     //  clearAll();
-    selectHead(1)
-    selectBody(4, 1, 2)
-    selectLegs(4, 1, 2)
+    selectHead()
+    // selectBody(4, 1, 2)
+    // selectLegs(4, 1, 2)
 
     
 }
@@ -107,20 +107,25 @@ function showBodyGame() {
 // }
 
 
-function selectHead(currentNumber) {
-    currentNumber = 1; // funker.
+function selectHead(ChoosenNumber) {
+    console.log(ChoosenNumber);
+    currentNumber = ChoosenNumber;
+    document.getElementById('head').innerHTML = /*HTML*/`
+    <button onclick="currentNumber--">◀</button>
+    <img src="img/head${currentNumber}.png" />
+    <button onclick="selectHead${currentNumber++}()">▶</button>
+  
+`;
 
-
-
-
+    // currentNumber = 1; // funker.
     // <button onclick="selectHead${currentNumber += 1}()">▶</button> 
     // console.log(previousNumber, currentNumber, nextNumber);
-    document.getElementById('head').innerHTML = /*HTML*/`
-        <button onclick="currentNumber--">◀</button>
-        <img src="img/head${currentNumber}.png" />
-        <button onclick="selectHead${currentNumber += 1}()">▶</button>
+    // document.getElementById('head').innerHTML = /*HTML*/`
+    //     <button onclick="currentNumber--">◀</button>
+    //     <img src="img/head${currentNumber}.png" />
+    //     <button onclick="selectHead${currentNumber += 1}()">▶</button>
       
-    `;
+    // `;
 }
 
 

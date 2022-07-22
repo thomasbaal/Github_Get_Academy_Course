@@ -1,10 +1,20 @@
+let indexed = '';
+
 const model = {
     view: '',
     currentPage: '',
     movieInputs:{
         title: '',
         year: '',
-        duration: '',
+        runtime: '',
+    
+    },
+
+    songInputs:{
+
+        title: '',
+        length: '',
+        artist:'',
     },
     movies: [
         {
@@ -28,7 +38,23 @@ const model = {
         }
     ], 
 
-    songs: ''
+    songs: [
+        {
+            title: 'The future of Africa',
+            length: 3.20,
+            artist: 'The who',
+        },
+        {
+            title: 'Alas la blame- us',
+            length: 0.5,
+            artist: 'Who the fuck knows',
+        },
+        {
+            title: 'Eliot',
+            length: 4.1,
+            artist: 'abrakadabra and the who',
+        },
+    ]
 
 
 };            

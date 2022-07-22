@@ -1,0 +1,14 @@
+body {
+    width: 480px; 
+    background-image: url(BlackJack_Background.jpg);
+box-sizing: border-box 480px;
+/* display: grid;
+grid-column-gap: 20px;
+grid-template-columns: 100px 100px 100px;
+grid-template-rows: 50px 50px 50px 50px; */
+}
+
+div {
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+
+
+<head>
+
+</head>
+
+<body>
+    <h3>Spread Operator</h3>
+    <p>The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into
+        another array or object.</p>
+
+    <script>
+        // Example - Combining arrays. -------------------------------------------------------------------------------
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const arrCombined = [...arr1, arr2]; // this will show: [1, 2, 3, Array(3)] - nested arrays.
+        const arrCombined2 = [...arr1, ...arr2] // this will show: [1, 2, 3, 4, 5, 6] - all values in same array.
+        console.log(arrCombined); // 
+        console.log(arrCombined2);
+        // ---------------------------------------------------------------------------------------------------------
+
+
+        // Example - Storing values from array in variables and using The SPREAD OPERATOR.
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+        const [one, two, ...therest] = numbers; // creating variables one,two and therest from "numbers" array.
+        console.log(one); // 1 
+        console.log(two); // 2
+        console.log(therest); // [3, 4, 5, 6, 7, 8]
+
+
+        // Example - Changing property values inside objects.
+        const minBil =
+        {
+            brand: 'Citroen',
+            model: 'Berlingo',
+            color: 'Yellow',
+        }
+        // updating info about minbil, starting with adding additional info or correction.
+        const updateMinBil =
+        {
+            year: 2010,
+            color: 'Blue',
+        }
+        // combining and overwriting.
+        const updatedMinBil = { ...minBil, ...updateMinBil };
+        console.log(updatedMinBil); // showing correct: {brand: 'Citroen', model: 'Berlingo', color: 'Blue', year: 2010}
+
+        // Spread Operator -----------------------
+        // NOTE!.. DOES NOT WORK ON NESTED OBJECTS, ERROR: NOT ITERABLE.
+        const arrNumbering = [7, 8, 9];
+
+        const arrBad = [3, 4, 5, arrNumbering[0], arrNumbering[1], arrNumbering[2]]; // slow, adding manually.
+        console.log(arrBad);
+
+        const newArr = [1, 2, ...arrNumbering]; // fast adding arrNumbering array to a new array with SPREAD-OPERATOR.
+        console.log(arrNumbering);
+        console.log(newArr); // shows: [1, 2, 7, 8, 9]
+        const newArrInArr = [1, 2, arrNumbering];
+        console.log(newArrInArr); // shows: [1, 2, Array(3)]
+
+        const numberArray = [5, 6, 7, 8, 9, 10];
+        const arrFull = [1, 2, 3, 4, ...numberArray];
+        console.log(arrFull); // shows : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        console.log(...arrFull); // logging values individually.: 1 2 3 4 5 6 7 8 9 10
+
+        // ------Adding a new menu to our restaurant---------------------------------------------------
+        const restaurant = {
+            name: 'Classico Italiano',
+            location: 'Viva Angelo Tavanati 23, Firenze, Italy',
+            categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+            startermenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+            mainmenu: ['Pizza', 'Pasta', 'Risotto'],
+            openinghours:
+            {
+                thu:
+                {
+                    open: 12,
+                    close: 22,
+                },
+
+                fri:
+                {
+                    open: 11,
+                    close: 23,
+                },
+
+                sat:
+                {
+                    open: 0,
+                    close: 23,
+                },
+            },
+
+            order: function (starterIndex, mainIndex) {
+                return [this.startermenu[starterIndex], this.mainmenu[mainIndex]];
+            },
+
+            orderPasta: function (ing1, ing2, ing3) {
+                console.log(`Here is your delicious Pasta with ${ing1}, ${ing2} and ${ing3}`);
+            }
+        };
+        const newMenu = [...restaurant.mainmenu, 'Gnocci']
+        console.log(newMenu); // logging new menu/array.
+        console.log(restaurant.mainmenu); // old menu have NOT! been altered.
+        console.log(...restaurant.location); // THIS IS A STRING. seperates every letter with a space.
+
+        // ---------------------Copy Array !! --------------------------------------------------
+        const mainMenuCopy = [...restaurant.mainmenu];
+        console.log(mainMenuCopy);
+
+        // ------------------ Join 2 arrays together - Or More ! -------------------------------------
+        const menu = [...restaurant.startermenu, ...restaurant.mainmenu];
+        console.log(menu);
+
+        // example with string -------
+        const str = 'Thomas';
+        console.log(...str); // T h o m a s
+
+        const letters = [...str, ' ', 'something']
+        console.log(letters); // ['T', 'h', 'o', 'm', 'a', 's', ' ', 'something']
+
+
+        // ---------------------------------------------------------------------------------------------------------
+        // const ingredients = [
+        //     prompt('Let\'s make Pasta! Ingredient 1?'),
+        //     prompt('Ingredient 2?'),
+        //     prompt('Ingredient 3?')
+        // ];
+        // console.log(ingredients);
+
+        // ----------the slower way to call the function.---------------------------------------------
+        // restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2])
+        // ------------------- Same as above but with the  SPREAD-OPERATOR.
+        // restaurant.orderPasta(...ingredients);
+        // ---------------------------------------------------------------------------------------------------------
+
+
+        //-----------------------------Spread-Operator with objects.-although not iterable--------------------------
+        const newRestaurant =
+        {
+            foundedin: 1998,
+            ...restaurant, // adding the old "restaurant" object.
+            founder: 'Guiseppe'
+        };
+        console.log(newRestaurant);// shows new info + all info from the old restaurant object
+
+        // -------------------------------- Create a copy of the newRestaurant Object.
+        const restaurantCopy = { ...newRestaurant }
+        console.log(restaurantCopy);
+        // changing name of the restaurant in the new object "newRestaurantCopy"
+        restaurantCopy.name = 'Ristorante Roma';
+        console.log(restaurantCopy.name); // Ristorante Roma
+        console.log(restaurant.name); // Classico Italiano
+    </script>
+</body>
+
+
+
+</html>

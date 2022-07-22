@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.grid-container {
+    display: grid;
+    grid-template-columns: 20px 20px;
+}
+
+.grid-item {
+    justify-content: auto;
+    
+}
+</style>
+<body>
+    <div id="showcards"></div>
+    
+    <script>
+
+
+let kortDrakt = ['<img src="img/card-spade.png">', '<img src="img/card-heart.png">', '<img src="img/card-diamond.png">', '<img src="img/card-club.png">'];
+let kortVerdi = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+let kortStokk = [];
+let showCardDiv = document.getElementById("showcards")
+let html = '';
+// ♥️♦️♣️♠️
+
+
+
+// ↓↓↓↓↓↓↓↓↓↓--  --↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+// Nested for loop: counting 1st card in kortdrakt, then going to next loop and counts all in kortVerdi, the rinse and repeat!.
+
+let i = '';
+let x = ''; 
+for( i = 0; i < kortDrakt.length; i++) {
+        for( x = 0; x < kortVerdi.length; x++) {
+                let kort = {Verdi: kortVerdi[x], Drakt: kortDrakt[i]} // creating a object inside
+                // console.log(kort)
+                kortStokk.push(kort)
+        }
+}
+
+// console.log(kortStokk);
+// ↑↑↑↑↑↑↑↑↑↑--  --↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
+
+
+
+
+// ↓↓↓↓↓↓↓↓↓↓-- Shuffling the array --↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+function stokkeKort(kortStokk) {
+    for(let i = 0; i < 1000; i++) {
+
+    }
+}
+
+
+// ↑↑↑↑↑↑↑↑↑↑--  --↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+// ↓↓↓↓↓↓↓↓↓↓--  --↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+renderKort();
+function renderKort() {
+    for(let i = 0; i < kortStokk.length; i++) {
+        html += `<div class="grid-container">
+                 <div class="grid-item">${kortStokk[i].Verdi}</div><div class="grid-item">${kortStokk[i].Drakt}</div>
+                 </div>
+        `
+    }
+
+}
+console.log(kortDrakt);
+console.log(kortStokk[1].Verdi);
+
+document.getElementById("showcards").innerHTML = html;
+</script>
+</body>
+</html>

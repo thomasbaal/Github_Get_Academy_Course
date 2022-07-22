@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The filter() Method</h2>
+    Definition and Usage
+    The filter() method creates a new array filled with elements that pass a test provided by a function.
+
+    The filter() method does not execute the function for empty elements.
+
+    The filter() method does not change the original array.
+
+    <p>Get every element in the array that has a value of 18 or more:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const ages = [32, 33, 16, 40];
+
+        document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+
+        function checkAdult(age) {
+            return age >= 18;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        let html = '';
+
+const jonas = {
+    firstname: 'Jonas',
+    lastname: 'Schmedtman',
+    birthyear: 1991,
+    birthmonth: 'September',
+    birthday: 18,
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+}
+
+console.log(jonas['job']); // bracket notation
+console.log(jonas.lastname); // dot notation
+
+
+const nameKey = 'name';
+const birthKey = 'birth';
+console.log(jonas['first' + 'name']); // concatinate firstname
+console.log(jonas['last' + nameKey]); // 
+console.log(jonas['birthday']); // bracket notation
+console.log(jonas[birthKey + 'month']);
+console.log(jonas['birthyear']);
+console.log(jonas[birthKey + 'year']);
+console.log(jonas.age);
+
+
+
+// make the bracket notation more clear / needed.---------------------------------------------------------------
+// Case, what if the user dont know about the object properties
+
+// const interestedIn = prompt
+// (
+// 'what do you want to know about Jonas?, choose between: firstname, lastname, age, job, location, twitter, and friends'
+// )
+
+// // adding properties to object.
+// jonas.location = 'Portugal'
+// jonas.twitter = '@jonasschmedtman'
+
+// // what if user ask for a propertie that doesnt exist.
+// // result will be "undefined" -- this is also a falsy value.
+// // we can use that to our advantage.
+
+// if(jonas[interestedIn]) {
+//     console.log(jonas[interestedIn]);
+//     html += jonas[interestedIn]
+// }else {html += `There is no information on Jonas with the value <em>${interestedIn}</em>`}
+// ---------------------------------------------------------------------------------------------------------------
+
+// ------------- Challenge ------------------
+// add these values to the object: Jonas has 3 friends, and his best friend is called Michael.
+// all without hardcoding.
+
+console.log(`${jonas.firstname} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+
+
+
+
+
+
+
+document.getElementById("show").innerHTML = html;
+    </script>
+</body>
+</html>

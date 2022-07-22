@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // while loop -------------
+        let amount = 10;
+
+        while (amount > 0) { // hvis man setter den høyere en 0 her vil la den gå i endeløs loop.(fikset på)
+            console.log('I have ' + amount + ' dollars and i am going to the mall yeai!')
+            amount--; // hver gang denne kjøres , reduseres "mengde" med -1.
+        }
+
+
+        // do - while loop -----------------------------------
+        let money = 12; // sette en start verdi for test.
+
+        // Gjøre dette (money++), "while" "money" <10, -- loops money 10 ganger.NOTE!: funksjonen do vil alltid kjøre en gang FØR den blir sjekket av while.
+        do {
+            console.log('you have ' + money + ' dollars');
+            money++;
+        } while (money < 10);
+
+
+        // for loop ------------------------------------
+        // Undefined variable i,, : (setter start verdi på "i"; looper frem til "i" ikke lenger mindre en 10; pluss på 1, for hver loop.)
+        let i;
+        for (i = 0; i < 10; i++) {
+            console.log('and the number is : ' + i);
+        }
+
+        for (let number = 11; number >= 0; number--) { // number-- fungerer her som en Escape for å ungå evig loop og crash i browser.
+            console.log('Nå er nummeret: ' + number)
+        }
+
+
+    </script>
+</body>
+
+</html>

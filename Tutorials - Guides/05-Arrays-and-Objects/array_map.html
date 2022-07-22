@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+
+    <h1>Definition and Usage</h1>
+    <p>map() creates a new array from calling a function for every array element.</p>
+
+    <p>map() calls a function once for each element in an array.</p>
+
+    <p>map() does not execute the function for empty elements.</p>
+
+    <p>map() does not change the original array.</p>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>Multiply every element in the array with 10:</p>
+
+    <p id="demo"></p>
+    <p>Square root of every item in array</p>
+    <p id="demo2"></p>
+    <p></p>
+    <p id="demo3"></p>
+
+    <script>
+        const numbers = [65, 44, 12, 4];
+        const newArr = numbers.map(myFunction);
+
+        document.getElementById("demo").innerHTML = newArr;
+
+        function myFunction(num) {
+            return num * 10;
+        }
+
+        //---------------------------------------------------------------
+        const numbers2 = [4, 9, 16, 25];
+        document.getElementById("demo2").innerHTML = numbers2.map(Math.sqrt);
+
+        //---------------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>

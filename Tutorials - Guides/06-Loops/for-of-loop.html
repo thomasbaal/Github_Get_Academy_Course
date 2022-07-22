@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>The For Of Loop</h2>
+
+    <p>The JavaScript for of statement loops
+        through the values of an iterable object.</p>
+    <p>It lets you loop over iterable data structures
+        such as Arrays, Strings, Maps, NodeLists, and more:</p>
+
+    <h3>Syntax</h3>
+    <p>for (variable of iterable) {</p>
+    <p>// code block to be executed</p>
+    <p>}</p>
+
+    <p><strong>Variable</strong> - For every iteration the value of the next property is assigned to the variable.</p>
+    <p>Variable can be declared with <em>const,</em> <em>let,</em> or <em>var.</em></p>
+
+    <div id="demo"></div> <br>
+    <p>Looping a string that is not in an array:</p>
+    <div id="demo2"></div>
+    <script>
+        // Looping arrays items and their values.
+        const cars = ['BMW', 'VOLVO', 'MORRIS']
+        let txt = '';
+        for (let values of cars) {
+            txt += values + `<br>`
+        }
+        document.getElementById("demo").innerHTML = txt;
+
+        // Looping over a string.
+        const arrStrings = 'Labbetuss'
+        let txt2 = '';
+        for (let values of arrStrings) {
+            txt2 += values + `<br>`
+        }
+        document.getElementById("demo2").innerHTML = txt2;
+    </script>
+
+</body>
+
+</html>
