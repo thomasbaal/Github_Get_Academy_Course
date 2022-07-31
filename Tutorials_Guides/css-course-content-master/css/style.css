@@ -1,0 +1,162 @@
+
+body {
+    /* background: url(table.png);     */
+    /* background-size: 50px 100px; */
+    /* background-size: cover; */
+    /* background-size: contain; */
+}
+
+h2:hover {
+    color: red;
+}
+
+.subtitle {
+    color: blue;
+}
+
+#services {
+    color: green;
+}
+
+/* several options here, first-child, last-child, nth-child(2) = child.nr2, only-child */
+li:first-child {
+    color: steelblue;
+}
+
+#google-link:link {
+    color: red;
+}
+
+#google-link:visited {
+    color: #0000ff;
+}
+
+ .container1 {
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    display: flex;
+     flex-direction: column;  /*setter de under hverandre*/
+     flex-direction: column-reverse;  /*under herandre i motsatt rekkefølge*/
+     flex-direction: row-reverse;  /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+ } 
+
+
+
+
+/*flex wrap*/
+.container2 {
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: no-wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+}
+
+/*Justify content*/
+.container3 {
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+    justify-content: center; /*flex-start.. flex-end.. flex-center: - start wil make the float left.. end wil make them float right.. center wil put them in center*/ 
+}
+
+/*height*/
+.container4 {
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+    justify-content: center; /*flex-start.. flex-end.. flex-center: - start wil make the float left.. end wil make them float right.. center wil put them in center*/ 
+    height: 300px; /*will be items that are 280 pixels hight.. 300px - margin 10px x 2*/
+}
+
+/*space-aroun.. space-between*/
+.container5 {
+    background-color: rgb(250, 250, 250);
+    margin: 10px;
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+    justify-content: space-evenly; /*space-around.. space-between..space-evenly..:  space-between on the same line space around the items wil always have the same spacing*/
+                                    /*space-around.. wil create space along edges of screen*/
+    height: 300px; /*will be items that are 280 pixels hight.. 300px - margin 10px x 2*/
+}
+
+
+.container6 {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+    justify-content: space-between; /*space-around.. space-between..space-evenly..:  space-between on the same line space around the items wil always have the same spacing*/
+                                    /*space-around.. wil create space along edges of screen*/
+    height: 300px; /*will be items that are 280 pixels high.. 300px - margin 10px x 2*/
+    gap: 10px 10px;
+
+}
+
+
+.container {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    /* flex-direction: column; */ /*setter de under hverandre*/
+    /* flex-direction: column-reverse; */ /*under herandre i motsatt rekkefølge*/
+    /* flex-direction: row-reverse; */ /*default.. på rekke men i reverse.*/
+    flex-direction: row; /*Default.. på rekke*/
+    flex-wrap: wrap; /*wrap or no wrap*/ /*wrap wil put the items on the next line if they dont fit.  no-wrap wil resize until the fit the page.*/
+    /*justify-content: space-between; /*space-around.. space-between..space-evenly..:  space-between on the same line space around the items wil always have the same spacing*/
+                                    /*space-around.. wil create space along edges of screen*/
+    height: 120px; /*will be items that are 280 pixels high.. 300px - margin 10px x 2*/
+    gap: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+.container-item {
+background-color: rgb(36, 130, 39);
+color: white;
+font-size: 25px;
+text-align: center;
+
+width: 100px;
+height: 100px;
+line-height: 100px;
+margin: 10px;
+}
+
+.container-item-numbers {
+background-color: rgb(250,0,0);
+color: white;
+font-size: 25px;
+
+/* /* width: 100px; */
+width: 50px; 
+height: 50px;
+line-height: 50px;
+/* line-height: 50px; */
+
+}

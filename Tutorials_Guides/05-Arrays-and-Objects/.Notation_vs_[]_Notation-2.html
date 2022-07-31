@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="appDiv"></div>
+<script>
+    let html = '';
+    const thomas = {
+            firstName: 'Thomas',
+            lastName: 'Bålsrød',
+            age: 2022 - 1979,
+            job: 'Unemployd',
+            friends: ['Labbetuss', 'Dj-Falcon', 'Omgodzer'],
+            language: 'Norwegian'
+        };
+        
+                
+                // udemy ------------------- :
+                // .notation 
+                html += `<br/> .Notation - thomas.lastName = ${thomas.lastName}`;
+                // [] Notation
+
+                html += `<br/> []Notation - thomas['lastName'] = ${thomas['lastName']}`
+                console.log(thomas.lastName);
+                
+                html += ` <br/><h2>Now to show the pro's of using bracket notation.</h2>
+                <p>As we can see from the object, there are two repeating words in firstName and lastName, The word "Name"</p>
+                <p>lets take advantage of this.</p>` 
+
+                const nameKey = 'Name'
+                console.log(thomas['first' + nameKey]); // Thomas
+                console.log(thomas['last' + nameKey]); // Bålsrød
+
+
+// ---------------------------------------------------------------------------------------------------------------------------
+
+// const interestedInInfo = prompt('What info do you nedd ? - Choose between firstname, lastname, age, job, friends or language')
+// interested()
+// function interested() {
+//     if(interestedInInfo) {
+//         console.log(thomas[interestedInInfo]);
+//         alert(thomas[interestedInInfo])
+//     }else {
+//         console.log('Wrong request');
+//         alert('Wrong Request !!, fack aff')
+//         return
+//     }
+// }
+// ---------------------------------------------------------------------------------------------------------------------------
+
+
+// add values to object thomas 
+thomas.clothes  = 'red';
+
+thomas.location = 'portugal'; // .Notation
+thomas['Twitter'] = '@thomasTwitter'; // []Notation - ps. vproperties med stor bokstav blir listet først i log.
+console.log(thomas);
+html += `${thomas.firstName}`
+
+// ---------------------------------------------------------------------------------------------
+// Challenge
+// skal ha dette resultatet Thomas has 3 friends, and his best frind is called Labbetuss
+console.log(`${thomas['firstName']} has ${thomas.friends.length} friends, and his best friend is ${thomas.friends[0]}`);
+
+
+// ---------------------------------------------------------------------------------------------------------
+// another example of [] Notation
+// console.log(interestedIn); // log the value
+// acccesing the above info with .notation will result in undefined because: there are not a propertie name called "interestedIn"
+// console.log(thomas.interestedIn); // undefined
+// accessing the same info wit [] notation : 
+// console.log(thomas[interestedIn]); // 43
+
+// why is this : 
+// the ,Notation needs to be specific: thomas.age is specific, thomas.interestedIn is not specific.
+// []Notation allow us to put eny expression inside of the [] so i dont have to be specific.
+
+// if(thomas[interestedIn]) { // if user typed on of the items mentioned = true value, 
+//     console.log('Am i interested ? '+ thomas[interestedIn]);
+// }
+
+
+// ---------------------------------------------------------------------------------------------------------
+                
+                
+
+
+document.getElementById("appDiv").innerHTML  = html;
+    </script>
+</body>
+</html>

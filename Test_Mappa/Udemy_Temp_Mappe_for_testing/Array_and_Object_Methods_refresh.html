@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><em>Join()</em> - The join() method returns an array as a string.
+    split() - The split() method splits a string into an array of substrings.
+    toUpperCase() - The toUpperCase() method converts a string to upper case letters.
+    toLowercase() - The toLowerCase() method converts a string to lower case letters.</p>
+
+    <div id="appDiv" ></div>
+    <script>
+let html = '';
+
+// join() 
+// The join() method returns an array as a string.
+let arr1 = ['Banan', 'Appelsin', 'Kiwi', 'Eple', 'Drue'];
+let strArr = arr1.join()
+console.log(strArr); // Banan,Appelsin etc.
+
+let strArr2 = arr1.join(' - '); // seperator
+console.log(strArr2); // Banan - Appelsin - Kiwi - Eple - Drue
+
+let strArr3 = arr1.join(' and ') // antother seperator example
+console.log(strArr3); // Banan and Appelsin and Kiwi and Eple and Drue
+// ----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// split()
+// The split() method splits a string into an array of substrings.
+let str1 = 'Javascript is pretty AWESOME !, dont you think ?'
+let arrFromStr = str1.split();
+console.log(arrFromStr); // ["Javascript is pretty AWESOME !"]
+
+let arrFromStr2 = str1.split(','); // states where you want to split the string ","
+console.log(arrFromStr2); //0: "Javascript is pretty AWESOME !"
+//1: " dont you think ?"
+
+let arrFromStr3 = str1.split(" "); // space as seperator
+console.log(arrFromStr3); // Every word get its own array-index spot.  =9 items   
+
+let arrFromStr4 = str1.split("") // this will create 1 array spot for each word, evenen spaces gets their own spot.
+console.log(arrFromStr4);
+
+let arrFromStr5 = str1.split(" ", 3); // seperates on spaces, bot only the first 3 words.
+console.log(arrFromStr5); // ['Javascript', 'is', 'pretty']
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// toUpperCase()
+// The toLUpperCase() method converts a string to uppercase letters.
+// there are no parameters.
+let someText = 'Abraham Lincon is awesome !'
+let strToUpperCase1 = someText.toUpperCase()
+console.log(strToUpperCase1); // ABRAHAM LINCON IS AWESOME !
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// toLowerCase()
+// there are no parameters.
+// The toLowerCase() method converts a string to lowercase letters.
+let someText2 = 'Monkeys Loves Bananas';
+let strtoLowerCase1 = someText2.toLowerCase();
+console.log(strtoLowerCase1); // monkeys loves bananas
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// reverse()
+// The reverse() method reverses the order of the elements in an array.
+const arrNumbers = [1, 2, 3, 4, 5]
+let arrReversed = arrNumbers.reverse()
+console.log(arrReversed); // [5, 4, 3, 2, 1]
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// shift()
+// The shift() method removes the first item of an array.
+// The shift() method changes the original array.
+// The shift() method returns the shifted element.
+let arr2 = ['a', 'b', 'c', 'd', 'e'];
+console.log(arr2.shift()); // returns shifted element = a
+
+let arr3 = ['a', 'b', 'c', 'd', 'e'];
+let arrShifted = arr3.shift()
+console.log(arr3); // what's left from the old array when element "a" has been shifed.
+
+// ----------------------------------------------------------------------------------------------------------------
+// toString()
+// The toString() method returns a string with array values separated by commas.
+// The toString() method does not change the original array.
+
+runToString = () => {
+    let object = {
+        thomas: {
+            firstName: 'Thomas',
+            lastName: 'Bålsrød',
+        }
+    }
+    let text = object.toString();
+    html += `
+    <div>${text}</div>
+    `
+}
+runToString()
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//map()
+// map() creates a new array from calling a function for every array element.
+
+//map() calls a function once for each element in an array.
+//map() does not execute the function for empty elements.
+//map() does not change the original array.
+//Syntax: array.map(function(currentValue, index, arr), thisValue)
+//Parameters: function()	Required. A function to be run for each array element.
+// currentValue	Required. The value of the current element.
+// index	Optional. The index of the current element.
+//index	Optional. The index of the current element.
+//arr	Optional. The array of the current element.
+// thisValue	Optional. Default value undefined. A value passed to the function to be used as its this value.
+
+//Divide each array element with 3
+let arrNumbers11 = [10, 123, 32, 3, 1922];
+let arrNew = arrNumbers11.map(divideFunction);
+
+function divideFunction(num) {
+    return num / 3
+}
+console.log(arrNew); // (5) [3.3333333333333335, 41, 10.666666666666666, 1, 640.6666666666666]
+
+
+
+//Math.trunc() A number.
+let aNum = 2.432
+console.log(Math.trunc(aNum)); // works
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//keys()
+// The keys() method returns an Array Iterator object with the keys of an array.
+// The keys() method does not change the original array.
+// Syntax: array.keys()
+// Parameters:NONE
+const fruitBasket = ['Banana', 'Orange', 'Kiwi', 'Grapes', 'Kiwi']
+const objectFruits = {
+    a: 'banana',
+    b: 'Orange',
+    c: 'Kiwi',
+    d: 32.
+}
+
+// on object:
+console.log(Object.keys(objectFruits)); // ['a', 'b', 'c', 'd']
+
+// on array:
+const fruitKeys = Object.keys(fruitBasket)
+console.log(fruitKeys); // (5) ['0', '1', '2', '3', '4']
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//push() The push() method adds new items to the end of an array.
+// The push() method changes the length of the array.
+// The push() method returns the new length.
+// Syntax: array.push(item1, item2, ..., itemX)
+// Return Value: A Number, The new length of the array
+
+let str4 = 'This is text-1.'
+let str5 = 'This is text-2'
+let arr6 = [];
+let arrToReceivePush = [];
+let arrToBePushed = ['Laban', 'Melkesjokolade', 'Icecream', 'Banana', 'Taco']
+let object1 = {
+    persons: [
+        {
+            firstName: 'Thomas',
+            lastName: 'Bålsrød',
+        },
+
+        {
+            firstName: 'Kenneth',
+            lastName: 'Tangen',
+        }
+    ]
+}
+
+let object2 = {
+    persons: [
+        {
+            firstName: 'Andrea',
+            lastName: 'Bålsrød',
+        },
+
+        {
+            firstName: 'Liam',
+            middleName: 'Andre',
+            lastName: 'Bravo Bålsrød'
+
+        }
+    ]
+}
+
+let object3 = {
+    nameInputs: {
+        firstName: 'Fredrik',
+        lastName: 'HuskerIkke'
+    }
+}
+
+let arrFirstName = ['Janne', 'Morten', 'Blerim', 'Anne', 'Torgeir']
+let arrLastName = ['Kristiansen', 'Tokheim', 'Rabagstus', 'Pilgrimsdotter', 'Larse']
+
+console.log(`--------------------push()----------------------`);
+arr6.push(str4, str5); // pushing variables with 'text'
+console.log(arr6); // (2) ['This is text-1.', 'This is text-1.'] array with 2 items.
+
+arrToReceivePush.push(arrToBePushed);
+console.log(arrToReceivePush); // (5) ['Laban', 'Melkesjokolade', 'Icecream', 'Banana', 'Taco']
+// object to object
+object1.persons.push(object3.nameInputs)
+console.log(object1);
+
+object1.persons.push(arrFirstName[0])
+console.log(object1); // 3: "Janne" Works, but missing properties names!
+
+object1.persons.push({firstName: arrFirstName[1], lastName: arrLastName[3] })
+console.log(object1); // 4: {firstName: 'Morten', lastName: 'Pilgrimsdotter'} // perfectly added as an object inside the array
+
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//indexOf()
+// The indexOf() method returns the first index (position) of a specified value.
+// The indexOf() method returns -1 if the value is not found.
+// The indexOf() method starts at a specified index and seaerches from left to right.
+// Default it searches from the first element.
+// Syntax : array.indexOf(item, start)
+//Parameters: item: Required - the value to search for.
+// start: optional start position.
+// Return value: A Number: Index position of the item found. returns -1 if item is not found.
+console.log(arrFirstName.indexOf('Blerim')); // 2, correct.
+console.log(arrFirstName.indexOf('Anne'), arrLastName.indexOf('pilgrimsdotter')); // 3 -1, -1 because its case sensitive.
+console.log(arrFirstName.indexOf('Anne'), arrLastName.indexOf('Pilgrimsdotter')); // 3 - 3, correct.
+console.log(arrFirstName[3], arrLastName[3]); // Anne Pilgrimsdotter
+
+console.log(object1.persons.indexOf('Kenneth'));
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//unshift()
+// The unshift() method adds new elements to the beginning of an array.
+// The unshift() method overwrites the original array.
+// Return Value: A Number - The new length of the array.
+// Syntax: array.unshift(item1, item2, ..., itemX)
+// Parameters: item1 = The item(s) to add to the array.
+// item2 = minimum one item is required.
+let arr4 = ['1', '2', '3', '4', '5'];
+arr4.unshift('99')
+console.log(arr4);// ['99', '1', '2', '3', '4', '5'] 
+
+returnTest = () => arr4.unshift(); // returnvalue = length of array.
+console.log(returnTest()); // 6 - the length of array.
+
+arr4.unshift(3, 18, 33, 907);
+console.log(returnTest()); // 10
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+//charAt()
+// The charAt() method returns the character at a specified index (position) in a string.
+// Syntax: string.charAt(index)
+// Parameters:index: optional, The index position of the character.Default = 0.
+let str7 = 'SomeText!'
+console.log(str7.charAt(5)); // e
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// sort()
+// The sort() sorts the elements of an array.
+// The sort() overwrites the original array.
+// The sort() sorts the elements as strings in alphabetical and ascending order.
+// below will create wrong order on umbers because its looking at the first number: 25 wil be bigger then 100. 2 wil be bigger then 14 etc.
+let arrUnorderedNums = [5, 7, 9, 4, 3, 0, 9, 8, 1, 2, 15, 14];
+console.log(arrUnorderedNums.sort()); // [0, 1, 14, 15, 2, 3, 4, 5, 7, 8, 9, 9]  // Will cause wrong ordering.
+//Fixing wrong ordering of numbers:
+let arrUnorderedNums_2 = [40, 100, 1, 5, 25, 10];
+console.log(arrUnorderedNums_2.sort(function(a, b){return a-b})); // [1, 5, 10, 25, 40, 100], correct.
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------------------------------------------
+// concat()
+// The concat() method concatenates (joins) two or more arrays.
+// The concat() method returns a new array, containing the joined arrays.
+// The concat() method does not change the existing arrays.
+// Syntax: arra1.concat(arra2, arra3 ..., arrayx)
+// Parameters: arra1, ... : Required - The aray(s) to be concatenated.
+// Return value: an array - The conent from the joined arrays.
+const arrNames10 = ['Liam', 'Thomas']
+const arrNames11 = ['Andrea', 'Cindy', 'Zelda']
+const arrCombined = arrNames10.concat(arrNames11)
+console.log(`Concat() --------------------------------`);
+console.log(arrCombined); // (5) ['Liam', 'Thomas', 'Andrea', 'Cindy', 'Zelda']
+// ----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// Combining several functions ---
+let arrFruits = ['Banana', 'Apple', 'Kiwi', 'Grapes', 'Orange'];
+let doSomething = arrFruits.join().toUpperCase()
+console.log(doSomething); // BANANA,APPLE,KIWI,GRAPES,ORANGE
+// split, reverse, join
+let doSomething2 = someText2.split('').reverse().join()
+console.log(doSomething2); // s,a,n,a,n,a,B, ,s,e,v,o,L, ,s,y,e,k,n,o,M
+
+let strNum = '123456789'
+let doSomething3 = strNum.split('').reverse()
+console.log(doSomething3); // ['9', '8', '7', '6', '5', '4', '3', '2', '1']
+
+// First character in string to upperaCase.
+let str6 = 'flexnipple';
+console.log(str6.charAt(0).toUpperCase() + str6.slice(1));// Flexnipple - correct.
+
+// Capitalize the first character in each word in a string.
+let str8 = 'i have learned something new today'
+let arrFromString = str8.split(" ")
+
+console.log(arrFromString); // (6) ['i', 'have', 'learned', 'something', 'new', 'today']
+
+for(i = 0; i < arrFromString.length; i++) {
+    console.log(arrFromString[i].charAt(0).toUpperCase() + arrFromString[i].slice(1)) //  correct.
+}
+
+
+// first Character in the first array element to UPPERCASE.
+let arrNames4 = ['thomas', 'liam', 'andrea', 'cindy', 'zelda'];
+
+
+document.getElementById("appDiv").innerHTML = html;
+</script>
+</body>
+</html>

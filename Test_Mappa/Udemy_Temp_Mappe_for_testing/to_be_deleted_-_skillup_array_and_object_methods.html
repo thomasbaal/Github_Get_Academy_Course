@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// create 2 objects ,both with and actors array containing objects within.
+
+let model1 = {
+    actors: [
+        {
+            firstName: 'Dwayne',
+            lastName: 'Johnson',
+        },
+
+        {
+            firstName: 'Vin',
+            lastName: 'Diesel',
+        },
+
+        {
+            firstName: 'Tom',
+            lastName: 'Cruise',
+        },
+    ]
+}
+
+let model2 = {
+    actors: [
+        {
+            firstName: 'Johnny',
+            lastName: 'Depp'
+        },
+
+        {
+            firstName: 'Robert',
+            lastName: 'Downey Jr'
+        },
+
+        {
+            firstName: 'Leonardo',
+            lastName: 'Dicaprio'
+        },
+    ]
+}
+
+// create object with temp storage for actors input.
+
+let actorsInput = {
+    firstName: '',
+    lastName: '',
+
+}
+
+// push strings to temp storage.
+actorsInput.firstName = 'Thomas';
+actorsInput.lastName = 'Bålsrød'
+actorsInput.twitter = '@thomTwitt'
+// with do Notation
+actorsInput['age'] = 43
+console.log(actorsInput);
+
+// push from temp storage to model1
+model1.actors.push(actorsInput)
+console.log(model1);
+
+// access propertie of thomas in model1
+console.log(model1.actors[3].age); // Etc.
+
+
+    </script>
+</body>
+</html>
